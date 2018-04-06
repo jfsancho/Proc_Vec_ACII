@@ -16,7 +16,7 @@ module registro_ID_EXE(clk,
 	sel_wb_in,
 	reg_wrv_in,
 	reg_wrs_in,
-	
+
 	//EXE
 	sel_op_out,
 	sel_vec_out,
@@ -33,7 +33,7 @@ module registro_ID_EXE(clk,
 	sel_wb_out,
 	reg_wrv_out,
 	reg_wrs_out,
-	
+
 	// Entradas
 	VEC1_in,
 	VEC2_in,
@@ -42,10 +42,10 @@ module registro_ID_EXE(clk,
 	inmediato_in,
 	dir_dest_in,
 	shift_in,
-	
-	
-	
-	
+
+
+
+
 	// Salidas
 	VEC1_out,
 	VEC2_out,
@@ -53,15 +53,15 @@ module registro_ID_EXE(clk,
 	sca1_out,
 	inmediato_out,
 	dir_dest_out,
-	shift_out,
+	shift_out
 );
 
-	
+
 input wire clk;
 
 
 //EXE
-input wire sel_op_in, sel_int_in; 
+input wire sel_op_in, sel_int_in;
 input wire [1:0] sel_vec_in;
 input wire [3:0] opcode_in;
 
@@ -83,7 +83,7 @@ input wire [7:0] shift_in;
 
 
 //EXE
-output wire sel_op_out, sel_int_out; 
+output wire sel_op_out, sel_int_out;
 output wire [1:0] sel_vec_out;
 output wire [3:0] opcode_out;
 
@@ -116,7 +116,7 @@ reg [2:0] dir_dest;
 
 //señales de control
 //EXE
-reg sel_op, sel_int; 
+reg sel_op, sel_int;
 reg [1:0] sel_vec;
 reg [3:0] opcode;
 
@@ -134,7 +134,7 @@ begin
 	sca1<=sca1_in;
 	inmediato<=inmediato_in;
 	shift<=shift_in;
-	  
+
 	//EXE
 	sel_op<=sel_op_in;
 	sel_vec<=sel_vec_in;
@@ -151,7 +151,7 @@ begin
 	sel_wb<=sel_wb_in;
 	reg_wrv<=reg_wrv_in;
 	reg_wrs<=reg_wrs_in;
-end 
+end
 always @(negedge clk) // escritura en el negedge
 begin
 	VEC1_out<=VEC1;
@@ -160,7 +160,7 @@ begin
 	sca1_out<=sca1;
 	inmediato_out<=inmediato;
 	shift_out<=shift;
-	  
+
 	//EXE
 	sel_op_out<=sel_op;
 	sel_vec_out<=sel_vec;
