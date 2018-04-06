@@ -8,13 +8,13 @@ import binascii  #Se agregan paquetes necesarios
 
 #Lista con las instrucciones del ISA
 instructionList = ["OR","SUMV","RESV","LOADV","STOREV","XOR","SLL","SRL","SLLC","SRLC",
-                   "SUM","RES","LOAD","STORE","MOV","VFS"];
+                   "SUM","RES","MOV","VFS"];
 #Lista con el codigo de operacion de la instruccion
 opcodeList = ["0000","0001","0010","0011","0100","0101","0110","0111",
-              "1000","1001","1010","1011","1100","1101","1110","1111"];
+              "1000","1001","1010","1011","1100","1101"];
 
 #Lista con el tipo de instruccion. 0 para generales, 1 para load/store, 2 para mov y vfs
-formatList = [0,0,0,1,1,0,0,0,0,0,0,0,1,1,2,2];
+formatList = [0,0,0,1,1,0,0,0,0,0,0,0,2,2];
 
 #Tabla con todos las instrucciones a escribir
 instructionTable = [];
@@ -75,26 +75,23 @@ def binario(instruction):
             return -1;
     
     elif(len(instruction)==3):
-        if(formatList[n] == 1): # load/store
-            reg = "";
-            dir_mem = "";
-            indice = 0;
-            dir_mem = agregaCeros(int(instruction[2][2:],16),7); #se pasa la direccion hexa a binario   
-            if(n == 3 or n == 4): # load/store con vectores
-                indice = 2;
-            if(n == 12 or n == 13): # load/store con escalares
-                indice = 1;
-            reg = agregaCeros(instruction[1][indice:],3);
+        reg = "";
+        dir_mem = "";
+        if(formatList[n] == 1): # load/store y MOV
+            dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario   
+            reg = agregaCeros(instruction[1][2:],2);
+            return(opcode+reg+dir_mem);
+        elif(formatList[n] == 2):
+            dest = agregaCeros(instruction[1][1:],2);
+            reg = agregaCeros(instruction[1][1:],2);
+            dir_mem = agregaCeros(int(instruction[2][2:],16),8); 
             return(opcode+reg+dir_mem);
             
         else:
             return -1;
         
-    elif(len(instruction)==2):
-        if(n == 14):    # MOV
-            dest = agregaCeros(instruction[1][1:],2);
-            return(opcode+dest);
-        elif (n == 15): # VFS
+    elif(len(instruction)==2):        
+        if(n == 13):    # VFS
             dest = agregaCeros(instruction[1][2:],2);
             return(opcode+dest);
         else:
