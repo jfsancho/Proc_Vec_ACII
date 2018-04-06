@@ -1,15 +1,17 @@
 module etapa_IF(clk,
 	sel_dir, // Entrada de selección de dirección de rom de algoritmos
 	sel_pc, //Entrada de selección de pc en el mux_pc
-	
+
 	// Salidas
-	instruccion
+	instruccion,
+	opcode
 );
 
 input wire clk;
 input wire [2:0] sel_dir;
-input wire sel_pc;					
+input wire sel_pc;
 output wire [13:0] instruccion;
+output wire opcode;
 
 wire [9:0] result_sel_dir;
 wire [9:0] result_sel_pc; //Wire de salida del mux de sel_pc y entrada al PC_REG.
@@ -27,9 +29,11 @@ parameter decrypt_circ_shift_dir = 500;
 parameter encrypt_add_dir = 600;
 parameter decrypt_add_dir = 700;
 
+assign opcode <= instruccion [13:10];
+
 registro_PC registroPC(
-	.clk(clk), 
-	.pc_in(result_sel_pc), 
+	.clk(clk),
+	.pc_in(result_sel_pc),
 	.pc_out(actual_pc)
 );
 
@@ -63,5 +67,5 @@ mux_8x10 muxDir(
 	.sel(sel_dir),
 	.result(result_sel_dir)
 );
-	
+
 endmodule
