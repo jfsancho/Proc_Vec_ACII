@@ -73,18 +73,18 @@ output reg [13:0] instruction_out;
 
 //WIRES DE SALIDA DE LAS SEÑALES
 //DECODIFICADOR DE SALIDA
-output wire reg_rdv_in, reg_rds_in, sel_dest_in;
+output reg reg_rdv_in, reg_rds_in, sel_dest_in;
 
 //EXE
-output wire sel_op_out, sel_int_out;
-output wire [1:0] sel_vec_out;
-output wire [3:0] opcode_out;
+output reg sel_op_out, sel_int_out;
+output reg [1:0] sel_vec_out;
+output reg [3:0] opcode_out;
 
 //MEM
-output wire sel_pcmem_out, sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
+output reg sel_pcmem_out, sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
 
 //WB
-output wire sel_wb_out, reg_wrv_out, reg_wrs_out;
+output reg sel_wb_out, reg_wrv_out, reg_wrs_out;
 
 //REGISTROS DE LAS SEÑALES DE control
 //Decodificador
@@ -132,7 +132,7 @@ begin
 	//DECODIFICADOR
 	reg_rdv_out <= reg_rdv;
 	reg_rds_out <= reg_rds;
-	sel_dest_out <= sel_dest;	
+	sel_dest_out <= sel_dest;
 	//EXE
 	sel_op_out<=sel_op;
 	sel_vec_out<=sel_vec;
