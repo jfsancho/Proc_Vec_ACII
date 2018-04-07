@@ -52,6 +52,13 @@ agreement for further details.
 		(text "instruccion[13..0]" (rect 131 27 195 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "opcode[3..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "opcode[3..0]" (rect 147 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
 	(parameter
 		"encrypt_xor_dir"
 		"0"

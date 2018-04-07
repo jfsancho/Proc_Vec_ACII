@@ -43,12 +43,12 @@ output reg reg_wrs;
 
 always @* //cada cuando tiene que verificar, siempre? o cuando ocurre un cambio en especifico
 begin
-    case (opcode)
+    case (opcode_in)
 		4'b0000: 
 			begin
 				//decode
 				sel_dest<=0;
-				reg_rdv<=1;
+				reg_rdv<=0;
 				reg_rds<=0;
 				
 				//EXE
@@ -63,8 +63,8 @@ begin
 				sel_data<=0;
 				mem_wr<=0;
 				//Write back:
-				sel_wb<=1;
-				reg_wrv<=1;
+				sel_wb<=0;
+				reg_wrv<=0;
 				reg_wrs<=0;
 			end
 		4'b0001:

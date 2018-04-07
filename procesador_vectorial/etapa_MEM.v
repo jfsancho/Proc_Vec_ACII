@@ -6,28 +6,28 @@ module etapa_MEM(
 	dir_dest_in,
 
 	//Banderas de entrada
-	sel_pcmem,
 	sum_mem,
-	mem_wr,
 	sel_mem,
 	sel_data,
 	clk,
+	final_mem,
 
-	//Datos de salida
-	mem_out, //Sirve para dos salidas, mem_out y dato de adelantamiento
+	//Salidas
 	data,
 	dir_dest_out,
-	inmediate_out
+	inmediate_out,
+	
+	dir_mem
 );
 
 input wire clk;
 input wire [31:0] data1_in, result_alu;
 input wire [7:0] inmediate_in;
 input wire [2:0] dir_dest_in;
+input wire sum_mem, sel_mem, sel_data;
+input wire [31:0] final_mem;
 
-input wire sel_pcmem, en_pc_adder, mem_wr, sel_mem, sel_data, clk;
-
-output wire [31:0] mem_out, data; //Data: Data que funciona como doble salida, para el registro mem/wb y para memoria RAM.
+output wire [31:0] data; //Data: Data que funciona como doble salida, para el registro mem/wb y para memoria RAM.
 output wire [7:0] inmediate_out;
 output wire [2:0] dir_dest_out;
 output wire [31:0] dir_mem; //dir_mem: dirección de entrada en la memoria. Es salida porque se dirige a la memoria RAM.
@@ -35,7 +35,7 @@ output wire [31:0] dir_mem; //dir_mem: dirección de entrada en la memoria. Es s
 wire [31:0] pcmem_input, pcmem_output, sum_mem_out;
 wire [31:0] cable_zero;
 wire [31:0] sel_mem_inmediate; //Inmediato de 32 bits extendido del inmediate_in de 8 bits.
-
+wire sel_pcmem;
 
 assign sel_mem_inmediate = {24'b0, inmediate_in};
 assign cable_zero = 32'b0;
@@ -68,5 +68,17 @@ mux_2x32 mux_sel_data(
 	.sel(sel_data),
 	.result(data)
 );
+
+compare_pcmem compare(
+	.dataa(final_mem),
+	.datab(pcmem_output),
+	.aeb(sel_pcmem)
+);
+
+sum_pcmem sum(
+	.dataa(pcmem_output),
+	.result(sum_mem_out),
+	.enable(sum_mem)
+);	
 
 endmodule

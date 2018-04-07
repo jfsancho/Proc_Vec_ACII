@@ -1,6 +1,5 @@
 module registro_EXE_MEM(clk,
 	//Memory
-	sel_pcmem_in,
 	sum_mem_in,
 	sel_mem_in,
 	sel_data_in,
@@ -12,7 +11,6 @@ module registro_EXE_MEM(clk,
 	reg_wrs_in,
 	
 	//Memory
-	sel_pcmem_out,
 	sum_mem_out,
 	sel_mem_out,
 	sel_data_out,
@@ -37,9 +35,10 @@ module registro_EXE_MEM(clk,
 
 );
 
+input wire clk;
 
 //MEM
-input wire sel_pcmem_in, sum_mem_in, sel_mem_in, sel_data_in, mem_wr_in;
+input wire  sum_mem_in, sel_mem_in, sel_data_in, mem_wr_in;
 
 //WB
 input wire sel_wb_in, reg_wrv_in, reg_wrs_in;
@@ -54,7 +53,7 @@ input wire [7:0] inmediato_in;
 
 
 //MEM
-output reg sel_pcmem_out, sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
+output reg sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
 
 //WB
 output reg sel_wb_out, reg_wrv_out, reg_wrs_out;
@@ -66,7 +65,7 @@ output reg [2:0] dir_dest_out;
 output reg [7:0] inmediato_out;
 
 //MEM
-reg sel_pcmem, sum_mem, sel_mem, sel_data, mem_wr;
+reg  sum_mem, sel_mem, sel_data, mem_wr;
 
 //WB
 reg sel_wb, reg_wrv, reg_wrs;
@@ -86,7 +85,6 @@ begin
 	inmediato<=inmediato_in;
 	
 	//Memory
-	sel_pcmem<=sel_pcmem_in;
 	sum_mem<=sum_mem_in;
 	sel_mem<=sel_mem_in;
 	sel_data<=sel_data_in;
@@ -107,7 +105,6 @@ begin
 	inmediato_out<=inmediato;
 	  
 	//Memory
-	sel_pcmem_out<=sel_pcmem;
 	sum_mem_out<=sum_mem;
 	sel_mem_out<=sel_mem;
 	sel_data_out<=sel_data;

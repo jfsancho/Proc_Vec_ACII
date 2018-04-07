@@ -23,7 +23,7 @@ module registro_MEM_WB(clk,
 		data_wrs_out
 	
 );
-
+input wire clk;
 
 //WB
 input wire sel_wb_in, reg_wrv_in, reg_wrs_in;

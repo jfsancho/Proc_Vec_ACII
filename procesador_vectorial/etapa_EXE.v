@@ -14,6 +14,7 @@ module etapa_EXE(
 	 sel_vec,
 	 sel_int,
 	 sel_op,
+
 	 
 	 //Datos de salida
 	 data1_out,
@@ -29,6 +30,7 @@ input wire [2:0] dir_dest_in;
 input wire [3:0] opcode;
 input wire [1:0] sel_vec;
 input wire sel_int, sel_op;
+
 
 output wire [31:0] data1_out, alu_result;
 output wire [7:0] inmediate_out;

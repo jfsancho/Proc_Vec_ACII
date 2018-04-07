@@ -12,7 +12,6 @@ output reg [7:0] resultado;
 always @*
 begin
     case (opcode)
-		4'b0000: resultado = val_a|val_b;	//OR vector-vector
 		4'b0001: resultado = val_a + val_b;	//SUMA vector-vector
 		4'b0010: resultado = val_a - val_b;	//RESTA vector-vector
 		4'b0101: resultado = val_a ^ val_b; //XOR vector-escalar

@@ -14,7 +14,7 @@ output wire [31:0] data_wbv;
 mux_2x32 muxWB(
 	.data0x(data_MEM),
 	.data1x(data_ALU),
-	.result(mux_sel_int_output),
+	.result(data_wbv),
 	.sel(sel_wb)
 );
 					

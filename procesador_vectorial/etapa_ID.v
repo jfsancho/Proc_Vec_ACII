@@ -38,7 +38,7 @@ input clk;
 input wire [13:0] instruccion;
 
 //direccion donde se guarda el dato a registro
-input wire [3:0] i_dir_wr; 
+input wire [2:0] i_dir_wr; 
 
 input wire [31:0] data_wrv;
 input wire [7:0] data_wrs;
@@ -49,9 +49,7 @@ input wire sel_dest;
 
 output wire [7:0]shift;
 output wire [7:0]inmediato;
-
-
-
+output wire [2:0] dir_dest_out;
 
 //cables de salidad de los bancos de registro
 output wire [31:0] data_vec1;
@@ -85,7 +83,6 @@ assign VFS[31:24]=data_reg3;
 
 
 
-assign opcode = instruccion[13:10];
 assign wreg_vec1= instruccion[5:3];
 assign wreg_vec2= instruccion[2:0];
 
@@ -137,8 +134,8 @@ registros_sca  reg_s(
 
 
 mux_2x3 mux_sel_dest(
-	.data0x(dir_dest_1),
-	.data1x(dir_dest_2),
+	.data0x(dir_dest1),
+	.data1x(dir_dest2),
 	.result(dir_dest_out),
 	.sel(sel_dest)
 );

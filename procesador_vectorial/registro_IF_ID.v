@@ -10,7 +10,6 @@ module registro_IF_ID(
 	sel_int_in,
 	opcode_in,
 	//Memory
-	sel_pcmem_in,
 	sum_mem_in,
 	sel_mem_in,
 	sel_data_in,
@@ -22,7 +21,7 @@ module registro_IF_ID(
 	reg_wrs_in,
 
 	//Decodificador de salida
-	seg_rdv_out,
+	reg_rdv_out,
 	reg_rds_out,
 	sel_dest_out,
 	//EXE
@@ -31,7 +30,6 @@ module registro_IF_ID(
 	sel_int_out,
 	opcode_out,
 	//Memory
-	sel_pcmem_out,
 	sum_mem_out,
 	sel_mem_out,
 	sel_data_out,
@@ -61,7 +59,7 @@ input wire [1:0] sel_vec_in;
 input wire [3:0] opcode_in;
 
 //MEM
-input wire sel_pcmem_in, sum_mem_in, sel_mem_in, sel_data_in, mem_wr_in;
+input wire sum_mem_in, sel_mem_in, sel_data_in, mem_wr_in;
 
 //WB
 input wire sel_wb_in, reg_wrv_in, reg_wrs_in;
@@ -73,7 +71,7 @@ output reg [13:0] instruction_out;
 
 //WIRES DE SALIDA DE LAS SEÑALES
 //DECODIFICADOR DE SALIDA
-output reg reg_rdv_in, reg_rds_in, sel_dest_in;
+output reg reg_rdv_out, reg_rds_out, sel_dest_out;
 
 //EXE
 output reg sel_op_out, sel_int_out;
@@ -81,7 +79,7 @@ output reg [1:0] sel_vec_out;
 output reg [3:0] opcode_out;
 
 //MEM
-output reg sel_pcmem_out, sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
+output reg sum_mem_out, sel_mem_out, sel_data_out, mem_wr_out;
 
 //WB
 output reg sel_wb_out, reg_wrv_out, reg_wrs_out;
@@ -95,7 +93,7 @@ reg [1:0] sel_vec;
 reg [3:0] opcode;
 
 //MEM
-reg sel_pcmem, sum_mem, sel_mem, sel_data, mem_wr;
+reg sum_mem, sel_mem, sel_data, mem_wr;
 
 //WB
 reg sel_wb, reg_wrv, reg_wrs;
@@ -114,7 +112,6 @@ begin
 	sel_int<=sel_int_in;
 	opcode<=opcode_in;
 	//Memory
-	sel_pcmem<=sel_pcmem_in;
 	sum_mem<=sum_mem_in;
 	sel_mem<=sel_mem_in;
 	sel_data<=sel_data_in;
@@ -139,7 +136,6 @@ begin
 	sel_int_out<=sel_int;
 	opcode_out<=opcode;
 	//Memory
-	sel_pcmem_out<=sel_pcmem;
 	sum_mem_out<=sum_mem;
 	sel_mem_out<=sel_mem;
 	sel_data_out<=sel_data;
