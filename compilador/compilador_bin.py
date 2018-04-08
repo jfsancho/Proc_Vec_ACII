@@ -7,18 +7,19 @@
 import binascii  #Se agregan paquetes necesarios
 
 #Lista con las instrucciones del ISA
-instructionList = ["OR","SUMV","RESV","LOADV","STOREV","XOR","SLL","SRL","SLLC","SRLC",
-                   "SUM","RES","MOV","VFS"];
+instructionList = ["NOP","SUMV","RESV","LOADV","STOREV","XOR","SLL","SRL","SLLC","SRLC",
+                   "SUM","RES","MOV","VFS","LPC","SPC"];
 #Lista con el codigo de operacion de la instruccion
 opcodeList = ["0000","0001","0010","0011","0100","0101","0110","0111",
-              "1000","1001","1010","1011","1100","1101"];
+              "1000","1001","1010","1011","1100","1101","1110","1111"];
 
-#Lista con el tipo de instruccion. 0 para generales, 1 para load/store, 2 para mov y vfs
-formatList = [0,0,0,1,1,0,0,0,0,0,0,0,2,2];
+#Lista con el tipo de instruccion. 0 para generales, 1 para load/store y mov, 2 para vfs
+formatList = [0,0,0,1,1,0,0,0,0,0,0,0,2,2,2,2];
 
 #Tabla con todos las instrucciones a escribir
 instructionTable = [];
 
+NOP = "00000000000000";
 
 ############################################################
 #funcion que agrega los ceros necesarios para los registros en la instruccion en binario
@@ -77,23 +78,28 @@ def binario(instruction):
     elif(len(instruction)==3):
         reg = "";
         dir_mem = "";
+        dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario
         if(formatList[n] == 1): # load/store y MOV
             dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario   
             reg = agregaCeros(instruction[1][2:],2);
-            return(opcode+reg+dir_mem);
+            if(n == 3): # load, debe agregar NOP despues
+                return(opcode+reg+dir_mem+"NOP");
+            else:
+                return(opcode+reg+dir_mem);
         elif(formatList[n] == 2):
-            dest = agregaCeros(instruction[1][1:],2);
-            reg = agregaCeros(instruction[1][1:],2);
-            dir_mem = agregaCeros(int(instruction[2][2:],16),8); 
-            return(opcode+reg+dir_mem);
+            dest = agregaCeros(instruction[1][1:],2); # en ese caso dir_mem es un inmediato
+            return(opcode+dest+dir_mem);
             
         else:
             return -1;
         
     elif(len(instruction)==2):        
-        if(n == 13):    # VFS
-            dest = agregaCeros(instruction[1][2:],2);
-            return(opcode+dest);
+        if(formatList[n] == 2):    # VFS, LPC y SPC
+            dest = agregaCeros(instruction[1][2:],3); # dest para VFS, reg para PPC y SCP
+            if(n == 13): #VFS se agrega NOP antes
+                return("NOP"+opcode+dest+"0000000");
+            else:
+                return(opcode+dest+"0000000");
         else:
             return -1;
     else: 
@@ -131,7 +137,14 @@ def write(instructionTable,target):      #Escritura de archivo
         for element in instructionTable: #Revisa la tabla para convertir a binario
             test = binario(element);     #Agrega los datos en binario
             if(test != -1):
-                print(binario(element), file=archive);
+                if(test[:3] == "NOP"):
+                    print(NOP, file=archive);
+                    print(binario(element)[3:], file=archive);
+                elif(test[14:] == "NOP"):
+                    print(binario(element)[:14], file=archive);
+                    print(NOP, file=archive);
+                else:
+                    print(binario(element), file=archive);
             else:                    
                 print("Error en el codigo fuente");
                 return -1;
