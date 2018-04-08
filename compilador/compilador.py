@@ -21,6 +21,7 @@ instructionTable = [];
 
 NOP = "00000000000000";
 
+
 ############################################################
 #funcion que agrega los ceros necesarios para los registros en la instruccion en binario
 def agregaCeros(reg,num): 
@@ -130,17 +131,42 @@ def agrega(instruction,line):
             instructionTable.append(instruction)
 
 #############################################################
+#Generacion de mif
+
+def mif(origen,destino,DEPTH):
+    WIDTH = 14;
+    with open(destino, 'w') as archive:
+        print("-- Memory Initialization File", file=archive);
+        print(("\nDEPTH = "+ str(DEPTH) +";"), file=archive);
+        print("WIDTH = 14;", file=archive);        
+        print("\nADDRESS_RADIX = DEC;", file=archive);
+        print("DATA_RADIX = BIN;", file=archive);
+        print("\nBEGIN", file=archive);
+        with open(origen) as file: #Abre y lee el archivo
+            contador = 0;
+            for line in file:
+                print((str(contador) + " : " + line[:14] + ";"), file=archive);
+                contador += 1;
+        
+        print("END;", file=archive);
+    
+
+#############################################################
 #Lectura y escritura de archivo
 
 def write(instructionTable,target):      #Escritura de archivo
+    size = 0;
     with open(target, 'w') as archive:
         for element in instructionTable: #Revisa la tabla para convertir a binario
             test = binario(element);     #Agrega los datos en binario
             if(test != -1):
+                size += 1;
                 if(test[:3] == "NOP"):
+                    size += 1;
                     print(NOP, file=archive);
                     print(binario(element)[3:], file=archive);
                 elif(test[14:] == "NOP"):
+                    size += 1;
                     print(binario(element)[:14], file=archive);
                     print(NOP, file=archive);
                 else:
@@ -148,6 +174,10 @@ def write(instructionTable,target):      #Escritura de archivo
             else:                    
                 print("Error en el codigo fuente");
                 return -1;
+    print("Compilación en binario con exito, generando mif");
+    mif('program.bin','program.mif',size);
+    print("Finalizado con exito");
+    print(size);
 
 #############################################################
 #Lectura del archivo de origen
@@ -162,8 +192,8 @@ def read(source,target): #Lee el archivo origen
                 cont = cont + 1;
     if(error == False): #Si no da error continua
         write(instructionTable,target);
-        print("Compilación con exito");
-
+        print("Finalizado con exito");
+        
 
 read('entrada.txt','program.bin')            
 
