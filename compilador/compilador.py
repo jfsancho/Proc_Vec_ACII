@@ -70,7 +70,7 @@ def binario(instruction):
                     indice1 = 2;
                 if(len(instruction[3]) == 3):           # verifica si el registro es vectorial
                     indice2 = 2;
-                dato1 = agregaCeros(instruction[2][indice:],3);
+                dato1 = agregaCeros(instruction[2][indice1:],3);
                 dato2 = agregaCeros(instruction[3][indice2:],3);
                 return(opcode+dest+dato1+dato2);
         else:
@@ -135,14 +135,14 @@ def agrega(instruction,line):
 
 def mif(origen,destino,DEPTH):
     WIDTH = 14;
-    with open(destino, 'w') as archive:
+    with open(destino, 'w', encoding="utf8") as archive:
         print("-- Memory Initialization File", file=archive);
         print(("\nDEPTH = "+ str(DEPTH) +";"), file=archive);
         print("WIDTH = 14;", file=archive);        
         print("\nADDRESS_RADIX = DEC;", file=archive);
         print("DATA_RADIX = BIN;", file=archive);
         print("\nBEGIN", file=archive);
-        with open(origen) as file: #Abre y lee el archivo
+        with open(origen, encoding="utf8") as file: #Abre y lee el archivo
             contador = 0;
             for line in file:
                 print((str(contador) + " : " + line[:14] + ";"), file=archive);
@@ -156,7 +156,7 @@ def mif(origen,destino,DEPTH):
 
 def write(instructionTable,target):      #Escritura de archivo
     size = 0;
-    with open(target, 'w') as archive:
+    with open(target, 'w', encoding="utf8") as archive:
         for element in instructionTable: #Revisa la tabla para convertir a binario
             test = binario(element);     #Agrega los datos en binario
             if(test != -1):
@@ -185,7 +185,7 @@ def write(instructionTable,target):      #Escritura de archivo
 def read(source,target): #Lee el archivo origen
     cont = 1;
     error = False;
-    with open(source) as archive: #Abre y lee el archivo
+    with open(source, encoding="utf8") as archive: #Abre y lee el archivo
         for line in archive:
             if (agrega(line,cont) == -1):
                 error = True;
@@ -195,5 +195,5 @@ def read(source,target): #Lee el archivo origen
         print("Finalizado con exito");
         
 
-read('entrada.txt','program.bin')            
+read('code1.txt','program.bin')            
 
