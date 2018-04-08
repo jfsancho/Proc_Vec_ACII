@@ -9,6 +9,7 @@ input wire [31:0]dataa;
 input wire enable;
 
 output reg [31:0];
+output reg [31:0] result;
 
 always @(posedge enable)
 begin

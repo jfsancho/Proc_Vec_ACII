@@ -8,14 +8,14 @@ module etapa_EXE(
 	 dir_dest_in,
 	 inmediate_in,
 	 vector_ad,
-	 
+
 	 //Señales de entrada
 	 opcode,
 	 sel_vec,
 	 sel_int,
 	 sel_op,
 
-	 
+
 	 //Datos de salida
 	 data1_out,
 	 alu_result,
@@ -76,21 +76,21 @@ alu alu1(
     .opcode(opcode),
     .resultado(alu_result[7:0])
     );
-	 
+
 alu alu2(
     .val_a(alu2_in_1),
     .val_b(alu2_in_2),
     .opcode(opcode),
     .resultado(alu_result[15:8])
     );
-	 
+
 alu alu3(
     .val_a(alu3_in_1),
     .val_b(alu3_in_2),
     .opcode(opcode),
     .resultado(alu_result[23:16])
     );
-	 
+
 alu alu4(
     .val_a(alu4_in_1),
     .val_b(alu4_in_2),
@@ -99,9 +99,9 @@ alu alu4(
     );
 
 mux_3x32 mux_sel_vec(
-	.data0x(vector_a),
-	.data1x(vfs),
-	.data2x(vector_ad),
+	.data0x(vector_ad),
+	.data1x(vector_a),
+	.data2x(vfs),
 	.sel(sel_vec),
 	.result(data1_out)
 );
