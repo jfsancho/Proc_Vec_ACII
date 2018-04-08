@@ -20,14 +20,14 @@ wire [9:0] suma_pc_result; // PC + 1
 
 
 // Direcciones en memoria ROM de los diferentes algoritmos.
-parameter encrypt_xor_dir = 000; // Estos números deben ser corregidos cuando esté el código final
-parameter decrypt_xor_dir = 100;
-parameter encrypt_shift_dir = 200;
-parameter decrypt_shift_dir = 300;
-parameter encrypt_circ_shift_dir = 400;
-parameter decrypt_circ_shift_dir = 500;
-parameter encrypt_add_dir = 600;
-parameter decrypt_add_dir = 700;
+parameter encrypt_xor_dir = 0; // Estos números deben ser corregidos cuando esté el código final
+parameter decrypt_xor_dir = 0;
+parameter encrypt_shift_dir = 4;
+parameter decrypt_shift_dir = 8;
+parameter encrypt_circ_shift_dir = 12;
+parameter decrypt_circ_shift_dir = 16;
+parameter encrypt_add_dir = 20;
+parameter decrypt_add_dir = 29;
 
 assign opcode = instruccion [13:10];
 
