@@ -52,7 +52,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE rom_memory.v
 set_global_assignment -name VERILOG_FILE compare_pcmem.v
 set_global_assignment -name BDF_FILE ProVec.bdf
@@ -80,3 +79,5 @@ set_global_assignment -name VERILOG_FILE etapa_EXE.v
 set_global_assignment -name VERILOG_FILE alu.v
 set_global_assignment -name VERILOG_FILE sum_pcmem.v
 set_global_assignment -name VERILOG_FILE adelantamiento.v
+set_global_assignment -name MIF_FILE program.mif
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

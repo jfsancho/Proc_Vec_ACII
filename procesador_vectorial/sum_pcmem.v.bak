@@ -8,7 +8,7 @@ module sum_pcmem(
 input wire [31:0]dataa;
 input wire enable;
 
-output reg [31:0] result;
+output reg [31:0];
 
 always @(posedge enable)
 begin
