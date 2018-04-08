@@ -52,11 +52,13 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE mux_2x6.v
+set_global_assignment -name VERILOG_FILE mux_8x6.v
+set_global_assignment -name VERILOG_FILE suma_PC.v
 set_global_assignment -name VERILOG_FILE rom_memory.v
 set_global_assignment -name VERILOG_FILE compare_pcmem.v
 set_global_assignment -name BDF_FILE ProVec.bdf
 set_global_assignment -name VERILOG_FILE unidad_control.v
-set_global_assignment -name VERILOG_FILE suma_PC.v
 set_global_assignment -name VERILOG_FILE registros_vec.v
 set_global_assignment -name VERILOG_FILE registros_sca.v
 set_global_assignment -name VERILOG_FILE registro_PCMEM.v
@@ -65,7 +67,6 @@ set_global_assignment -name VERILOG_FILE registro_MEM_WB.v
 set_global_assignment -name VERILOG_FILE registro_IF_ID.v
 set_global_assignment -name VERILOG_FILE registro_ID_EXE.v
 set_global_assignment -name VERILOG_FILE registro_EXE_MEM.v
-set_global_assignment -name VERILOG_FILE mux_8x10.v
 set_global_assignment -name VERILOG_FILE mux_3x32.v
 set_global_assignment -name VERILOG_FILE mux_2x32.v
 set_global_assignment -name VERILOG_FILE mux_2x10.v

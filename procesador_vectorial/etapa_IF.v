@@ -13,21 +13,21 @@ input wire sel_pc;
 output wire [13:0] instruccion;
 output wire [3:0] opcode;
 
-wire [9:0] result_sel_dir;
-wire [9:0] result_sel_pc; //Wire de salida del mux de sel_pc y entrada al PC_REG.
-wire [9:0] actual_pc; //Wire de salida del PC_REG y entrada a la ROM de instrucciones.
-wire [9:0] suma_pc_result; // PC + 1
+wire [5:0] result_sel_dir;
+wire [5:0] result_sel_pc; //Wire de salida del mux de sel_pc y entrada al PC_REG.
+wire [5:0] actual_pc; //Wire de salida del PC_REG y entrada a la ROM de instrucciones.
+wire [5:0] suma_pc_result; // PC + 1
 
 
 // Direcciones en memoria ROM de los diferentes algoritmos.
-parameter encrypt_xor_dir = 0; // Estos números deben ser corregidos cuando esté el código final
-parameter decrypt_xor_dir = 0;
-parameter encrypt_shift_dir = 4;
-parameter decrypt_shift_dir = 8;
-parameter encrypt_circ_shift_dir = 12;
-parameter decrypt_circ_shift_dir = 16;
-parameter encrypt_add_dir = 20;
-parameter decrypt_add_dir = 29;
+parameter encrypt_xor_dir = 6'b0; // Estos números deben ser corregidos cuando esté el código final
+parameter decrypt_xor_dir = 6'b0;
+parameter encrypt_shift_dir = 6'b000100; //4
+parameter decrypt_shift_dir = 6'b001000; //8
+parameter encrypt_circ_shift_dir = 6'b001100; //12
+parameter decrypt_circ_shift_dir = 6'b010000; //16
+parameter encrypt_add_dir = 6'b010100;//20
+parameter decrypt_add_dir = 6'b011101; //29
 
 assign opcode = instruccion [13:10];
 
@@ -38,7 +38,7 @@ registro_PC registroPC(
 );
 
 suma_PC sumaPC(
-	.dataa(actual_pc),
+	.datab(actual_pc),
 	.result(suma_pc_result)
 );
 
@@ -48,14 +48,14 @@ rom_memory ROMMemory(
 	.q(instruccion)
 );
 
-mux_2x10 muxPC(
+mux_2x6 muxPC(
 	.data0x(suma_pc_result),
 	.data1x(result_sel_dir),
 	.sel(sel_pc),
 	.result(result_sel_pc)
 );
 
-mux_8x10 muxDir(
+mux_8x6 muxDir(
 	.data0x(encrypt_xor_dir),
 	.data1x(decrypt_xor_dir),
 	.data2x(encrypt_shift_dir),
