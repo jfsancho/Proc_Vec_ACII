@@ -12,6 +12,7 @@
 *.rpt
 *.jdi
 *.sld
+*.pin
 *.ddb
 *.dfp
 *.ammdb
