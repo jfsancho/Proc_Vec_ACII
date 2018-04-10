@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProVec
-Sun Apr 08 12:40:41 2018
+Tue Apr 10 10:41:49 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,39 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Source assignments for etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated
+ 13. Source assignments for etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated
+ 14. Parameter Settings for User Entity Instance: etapa_IF:inst
+ 15. Parameter Settings for User Entity Instance: etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component
+ 16. Parameter Settings for User Entity Instance: etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component
+ 18. Parameter Settings for User Entity Instance: etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component
+ 19. Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component
+ 20. Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component
+ 21. Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component
+ 22. Parameter Settings for User Entity Instance: etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1
+ 23. Parameter Settings for User Entity Instance: etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component
+ 24. Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_pcmem|lpm_mux:LPM_MUX_component
+ 25. Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_mem|lpm_mux:LPM_MUX_component
+ 26. Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_data|lpm_mux:LPM_MUX_component
+ 27. Parameter Settings for User Entity Instance: etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component
+ 28. Parameter Settings for User Entity Instance: etapa_WB:inst15|mux_2x32:muxWB|lpm_mux:LPM_MUX_component
+ 29. altsyncram Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "etapa_MEM:inst16|mux_2x32:mux_sel_mem"
+ 31. Port Connectivity Checks: "etapa_MEM:inst16|mux_2x32:mux_sel_pcmem"
+ 32. Port Connectivity Checks: "etapa_ID:inst5|mux_2x3:mux_sel_dest"
+ 33. Port Connectivity Checks: "etapa_ID:inst5|registros_sca:reg_s"
+ 34. Port Connectivity Checks: "etapa_IF:inst|mux_8x6:muxDir"
+ 35. Post-Synthesis Netlist Statistics for Top Partition
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +66,27 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Apr 08 12:40:41 2018           ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name               ; ProVec                                      ;
-; Top-level Entity Name       ; ProVec                                      ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 10 10:41:48 2018       ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                   ; ProVec                                      ;
+; Top-level Entity Name           ; ProVec                                      ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 174                                         ;
+; Total pins                      ; 102                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 768                                         ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +185,801 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
+; mux_2x6.v                        ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x6.v              ;         ;
+; mux_8x6.v                        ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x6.v              ;         ;
+; suma_PC.v                        ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/suma_PC.v              ;         ;
+; rom_memory.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/rom_memory.v           ;         ;
+; compare_pcmem.v                  ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/compare_pcmem.v        ;         ;
+; ProVec.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/ProVec.bdf             ;         ;
+; unidad_control.v                 ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/unidad_control.v       ;         ;
+; registros_vec.v                  ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registros_vec.v        ;         ;
+; registros_sca.v                  ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registros_sca.v        ;         ;
+; registro_PCMEM.v                 ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_PCMEM.v       ;         ;
+; registro_PC.v                    ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_PC.v          ;         ;
+; registro_MEM_WB.v                ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_MEM_WB.v      ;         ;
+; registro_IF_ID.v                 ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_IF_ID.v       ;         ;
+; registro_ID_EXE.v                ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_ID_EXE.v      ;         ;
+; registro_EXE_MEM.v               ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_EXE_MEM.v     ;         ;
+; mux_3x32.v                       ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_3x32.v             ;         ;
+; mux_2x32.v                       ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x32.v             ;         ;
+; mux_2x8.v                        ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x8.v              ;         ;
+; mux_2x3.v                        ; yes             ; User Wizard-Generated File         ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x3.v              ;         ;
+; etapa_WB.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_WB.v             ;         ;
+; etapa_MEM.v                      ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_MEM.v            ;         ;
+; etapa_IF.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v             ;         ;
+; etapa_ID.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_ID.v             ;         ;
+; etapa_EXE.v                      ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v            ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/alu.v                  ;         ;
+; sum_pcmem.v                      ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/sum_pcmem.v            ;         ;
+; adelantamiento.v                 ; yes             ; User Verilog HDL File              ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/adelantamiento.v       ;         ;
+; program.mif                      ; yes             ; User Memory Initialization File    ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/program.mif            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_add_sub.tdf           ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/addcore.inc               ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/look_add.inc              ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/bypassff.inc              ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altshift.inc              ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc   ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc            ;         ;
+; db/add_sub_2lh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/add_sub_2lh.tdf     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc              ;         ;
+; db/altsyncram_l8g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_l8g1.tdf ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf               ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/muxlut.inc                ;         ;
+; db/mux_ujc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_ujc.tdf         ;         ;
+; db/mux_6kc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_6kc.tdf         ;         ;
+; db/mux_flc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_flc.tdf         ;         ;
+; db/mux_dlc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_dlc.tdf         ;         ;
+; db/mux_0kc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_0kc.tdf         ;         ;
+; db/altsyncram_spj1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf ;         ;
+; db/mux_rjc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_rjc.tdf         ;         ;
+; lpm_compare.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_compare.tdf           ;         ;
+; comptree.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/comptree.inc              ;         ;
+; db/cmpr_ufg.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/cmpr_ufg.tdf        ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 99        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 120       ;
+;     -- 7 input functions                    ; 1         ;
+;     -- 6 input functions                    ; 42        ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 8         ;
+;     -- <=3 input functions                  ; 65        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 174       ;
+;                                             ;           ;
+; I/O pins                                    ; 102       ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 768       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 154       ;
+; Total fan-out                               ; 1016      ;
+; Average fan-out                             ; 1.99      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Entity Name      ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |ProVec                                      ; 120 (2)             ; 174 (0)                   ; 768               ; 0          ; 102  ; 0            ; |ProVec                                                                                                   ; ProVec           ; work         ;
+;    |etapa_IF:inst|                           ; 6 (0)               ; 12 (0)                    ; 768               ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst                                                                                     ; etapa_IF         ; work         ;
+;       |mux_2x6:muxPC|                        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|mux_2x6:muxPC                                                                       ; mux_2x6          ; work         ;
+;          |lpm_mux:LPM_MUX_component|         ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component                                             ; lpm_mux          ; work         ;
+;             |mux_ujc:auto_generated|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component|mux_ujc:auto_generated                      ; mux_ujc          ; work         ;
+;       |registro_PC:registroPC|               ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|registro_PC:registroPC                                                              ; registro_PC      ; work         ;
+;       |rom_memory:ROMMemory|                 ; 0 (0)               ; 0 (0)                     ; 768               ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|rom_memory:ROMMemory                                                                ; rom_memory       ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 768               ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component                                ; altsyncram       ; work         ;
+;             |altsyncram_l8g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 768               ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated ; altsyncram_l8g1  ; work         ;
+;       |suma_PC:sumaPC|                       ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|suma_PC:sumaPC                                                                      ; suma_PC          ; work         ;
+;          |lpm_add_sub:LPM_ADD_SUB_component| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component                                    ; lpm_add_sub      ; work         ;
+;             |add_sub_2lh:auto_generated|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component|add_sub_2lh:auto_generated         ; add_sub_2lh      ; work         ;
+;    |etapa_MEM:inst16|                        ; 109 (0)             ; 96 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16                                                                                  ; etapa_MEM        ; work         ;
+;       |compare_pcmem:compare|                ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|compare_pcmem:compare                                                            ; compare_pcmem    ; work         ;
+;          |lpm_compare:LPM_COMPARE_component| ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component                          ; lpm_compare      ; work         ;
+;             |cmpr_ufg:auto_generated|        ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component|cmpr_ufg:auto_generated  ; cmpr_ufg         ; work         ;
+;       |mux_2x32:mux_sel_mem|                 ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_mem                                                             ; mux_2x32         ; work         ;
+;          |lpm_mux:LPM_MUX_component|         ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_mem|lpm_mux:LPM_MUX_component                                   ; lpm_mux          ; work         ;
+;             |mux_dlc:auto_generated|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_mem|lpm_mux:LPM_MUX_component|mux_dlc:auto_generated            ; mux_dlc          ; work         ;
+;       |mux_2x32:mux_sel_pcmem|               ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_pcmem                                                           ; mux_2x32         ; work         ;
+;          |lpm_mux:LPM_MUX_component|         ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_pcmem|lpm_mux:LPM_MUX_component                                 ; lpm_mux          ; work         ;
+;             |mux_dlc:auto_generated|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|mux_2x32:mux_sel_pcmem|lpm_mux:LPM_MUX_component|mux_dlc:auto_generated          ; mux_dlc          ; work         ;
+;       |registro_PCMEM:reg_pcmem|             ; 0 (0)               ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|registro_PCMEM:reg_pcmem                                                         ; registro_PCMEM   ; work         ;
+;       |sum_pcmem:sum|                        ; 32 (32)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|etapa_MEM:inst16|sum_pcmem:sum                                                                    ; sum_pcmem        ; work         ;
+;    |registro_EXE_MEM:inst10|                 ; 0 (0)               ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|registro_EXE_MEM:inst10                                                                           ; registro_EXE_MEM ; work         ;
+;    |registro_ID_EXE:inst7|                   ; 0 (0)               ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|registro_ID_EXE:inst7                                                                             ; registro_ID_EXE  ; work         ;
+;    |registro_IF_ID:inst3|                    ; 0 (0)               ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |ProVec|registro_IF_ID:inst3                                                                              ; registro_IF_ID   ; work         ;
+;    |unidad_control:inst2|                    ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProVec|unidad_control:inst2                                                                              ; unidad_control   ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                            ;
++--------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+; Name                                                                                                         ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
++--------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+; etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 64           ; 14           ; --           ; --           ; 896  ; program.mif ;
++--------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; registro_MEM_WB:inst12|data_wrs_out[7]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[7]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[6]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[6]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[5]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[5]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[4]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[4]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[3]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[3]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[2]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[2]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[1]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[1]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|reg_wrs_out      ; Lost fanout        ;
+; registro_MEM_WB:inst12|reg_wrs          ; Lost fanout        ;
+; registro_EXE_MEM:inst10|reg_wrs_out     ; Lost fanout        ;
+; registro_EXE_MEM:inst10|reg_wrs         ; Lost fanout        ;
+; registro_ID_EXE:inst7|reg_wrs_out       ; Lost fanout        ;
+; registro_ID_EXE:inst7|reg_wrs           ; Lost fanout        ;
+; registro_IF_ID:inst3|reg_wrs_out        ; Lost fanout        ;
+; registro_IF_ID:inst3|reg_wrs            ; Lost fanout        ;
+; registro_IF_ID:inst3|reg_rds_out        ; Lost fanout        ;
+; registro_IF_ID:inst3|reg_rds            ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs_out[0]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|data_wrs[0]      ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest_out[0]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest[0]      ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest_out[0] ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest[0]     ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest_out[0]   ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest[0]       ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest_out[1]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest[1]      ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest_out[1] ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest[1]     ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest_out[1]   ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest[1]       ; Lost fanout        ;
+; registro_IF_ID:inst3|instruction_out[9] ; Lost fanout        ;
+; registro_IF_ID:inst3|instruction[9]     ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest_out[2]  ; Lost fanout        ;
+; registro_MEM_WB:inst12|dir_dest[2]      ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest_out[2] ; Lost fanout        ;
+; registro_EXE_MEM:inst10|dir_dest[2]     ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest_out[2]   ; Lost fanout        ;
+; registro_ID_EXE:inst7|dir_dest[2]       ; Lost fanout        ;
+; registro_IF_ID:inst3|sel_dest_out       ; Lost fanout        ;
+; registro_IF_ID:inst3|sel_dest           ; Lost fanout        ;
+; registro_IF_ID:inst3|instruction_out[8] ; Lost fanout        ;
+; registro_IF_ID:inst3|instruction[8]     ; Lost fanout        ;
+; Total Number of Removed Registers = 50  ;                    ;
++-----------------------------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                ;
++----------------------------------------+--------------------+------------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal ; Registers Removed due to This Register                                       ;
++----------------------------------------+--------------------+------------------------------------------------------------------------------+
+; registro_MEM_WB:inst12|dir_dest_out[0] ; Lost Fanouts       ; registro_MEM_WB:inst12|dir_dest[0], registro_EXE_MEM:inst10|dir_dest_out[0], ;
+;                                        ;                    ; registro_EXE_MEM:inst10|dir_dest[0], registro_ID_EXE:inst7|dir_dest_out[0],  ;
+;                                        ;                    ; registro_ID_EXE:inst7|dir_dest[0], registro_IF_ID:inst3|sel_dest_out,        ;
+;                                        ;                    ; registro_IF_ID:inst3|sel_dest, registro_IF_ID:inst3|instruction_out[8],      ;
+;                                        ;                    ; registro_IF_ID:inst3|instruction[8]                                          ;
+; registro_MEM_WB:inst12|reg_wrs_out     ; Lost Fanouts       ; registro_MEM_WB:inst12|reg_wrs, registro_EXE_MEM:inst10|reg_wrs_out,         ;
+;                                        ;                    ; registro_EXE_MEM:inst10|reg_wrs, registro_ID_EXE:inst7|reg_wrs_out,          ;
+;                                        ;                    ; registro_ID_EXE:inst7|reg_wrs, registro_IF_ID:inst3|reg_wrs_out,             ;
+;                                        ;                    ; registro_IF_ID:inst3|reg_wrs                                                 ;
+; registro_MEM_WB:inst12|dir_dest_out[1] ; Lost Fanouts       ; registro_MEM_WB:inst12|dir_dest[1], registro_EXE_MEM:inst10|dir_dest_out[1], ;
+;                                        ;                    ; registro_EXE_MEM:inst10|dir_dest[1], registro_ID_EXE:inst7|dir_dest_out[1],  ;
+;                                        ;                    ; registro_ID_EXE:inst7|dir_dest[1], registro_IF_ID:inst3|instruction_out[9],  ;
+;                                        ;                    ; registro_IF_ID:inst3|instruction[9]                                          ;
+; registro_MEM_WB:inst12|dir_dest_out[2] ; Lost Fanouts       ; registro_MEM_WB:inst12|dir_dest[2], registro_EXE_MEM:inst10|dir_dest_out[2], ;
+;                                        ;                    ; registro_EXE_MEM:inst10|dir_dest[2], registro_ID_EXE:inst7|dir_dest_out[2],  ;
+;                                        ;                    ; registro_ID_EXE:inst7|dir_dest[2]                                            ;
+; registro_MEM_WB:inst12|data_wrs_out[7] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[7]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[6] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[6]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[5] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[5]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[4] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[4]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[3] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[3]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[2] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[2]                                           ;
+; registro_MEM_WB:inst12|data_wrs_out[1] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[1]                                           ;
+; registro_IF_ID:inst3|reg_rds_out       ; Lost Fanouts       ; registro_IF_ID:inst3|reg_rds                                                 ;
+; registro_MEM_WB:inst12|data_wrs_out[0] ; Lost Fanouts       ; registro_MEM_WB:inst12|data_wrs[0]                                           ;
++----------------------------------------+--------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 174   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                         ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_IF:inst ;
++------------------------+-------+---------------------------+
+; Parameter Name         ; Value ; Type                      ;
++------------------------+-------+---------------------------+
+; encrypt_xor_dir        ; 0     ; Signed Integer            ;
+; decrypt_xor_dir        ; 0     ; Signed Integer            ;
+; encrypt_shift_dir      ; 4     ; Signed Integer            ;
+; decrypt_shift_dir      ; 8     ; Signed Integer            ;
+; encrypt_circ_shift_dir ; 12    ; Signed Integer            ;
+; decrypt_circ_shift_dir ; 16    ; Signed Integer            ;
+; encrypt_add_dir        ; 20    ; Signed Integer            ;
+; decrypt_add_dir        ; 29    ; Signed Integer            ;
++------------------------+-------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; LPM_WIDTH              ; 6           ; Signed Integer                                                       ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                              ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                              ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                              ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                              ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                              ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                   ;
+; DEVICE_FAMILY          ; Cyclone V   ; Untyped                                                              ;
+; USE_WYS                ; OFF         ; Untyped                                                              ;
+; STYLE                  ; FAST        ; Untyped                                                              ;
+; CBXI_PARAMETER         ; add_sub_2lh ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                             ;
+; WIDTH_A                            ; 14                   ; Signed Integer                                      ;
+; WIDTHAD_A                          ; 6                    ; Signed Integer                                      ;
+; NUMWORDS_A                         ; 64                   ; Signed Integer                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                             ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; program.mif          ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_l8g1      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+---------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                          ;
++------------------------+-----------+---------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                ;
+; LPM_WIDTH              ; 6         ; Signed Integer                                                ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                       ;
+; CBXI_PARAMETER         ; mux_ujc   ; Untyped                                                       ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                       ;
++------------------------+-----------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+----------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                           ;
++------------------------+-----------+----------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                 ;
+; LPM_WIDTH              ; 6         ; Signed Integer                                                 ;
+; LPM_SIZE               ; 8         ; Signed Integer                                                 ;
+; LPM_WIDTHS             ; 3         ; Signed Integer                                                 ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                        ;
+; CBXI_PARAMETER         ; mux_6kc   ; Untyped                                                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                        ;
++------------------------+-----------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                   ;
++------------------------+-----------+------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                           ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                         ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                         ;
+; LPM_SIZE               ; 3         ; Signed Integer                                                         ;
+; LPM_WIDTHS             ; 2         ; Signed Integer                                                         ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                ;
+; CBXI_PARAMETER         ; mux_flc   ; Untyped                                                                ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                ;
++------------------------+-----------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                   ;
++------------------------+-----------+------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                           ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                         ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                         ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                         ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                         ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                ;
+; CBXI_PARAMETER         ; mux_dlc   ; Untyped                                                                ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                ;
++------------------------+-----------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+----------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                 ;
++------------------------+-----------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 8         ; Signed Integer                                                       ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_0kc   ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                              ;
++------------------------+-----------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1 ;
++------------------------------------+----------------------+---------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                        ;
++------------------------------------+----------------------+---------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                     ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                     ;
+; WIDTH_A                            ; 8                    ; Untyped                                     ;
+; WIDTHAD_A                          ; 3                    ; Untyped                                     ;
+; NUMWORDS_A                         ; 8                    ; Untyped                                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WIDTH_B                            ; 8                    ; Untyped                                     ;
+; WIDTHAD_B                          ; 3                    ; Untyped                                     ;
+; NUMWORDS_B                         ; 8                    ; Untyped                                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                     ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                     ;
+; CBXI_PARAMETER                     ; altsyncram_spj1      ; Untyped                                     ;
++------------------------------------+----------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                  ;
++------------------------+-----------+-----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                        ;
+; LPM_WIDTH              ; 3         ; Signed Integer                                                        ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                        ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                        ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                               ;
+; CBXI_PARAMETER         ; mux_rjc   ; Untyped                                                               ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                               ;
++------------------------+-----------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_pcmem|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                      ;
++------------------------+-----------+---------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                            ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                            ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                            ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                            ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; mux_dlc   ; Untyped                                                                   ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                   ;
++------------------------+-----------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_mem|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+-------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                    ;
++------------------------+-----------+-------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                            ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                          ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                          ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                          ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                          ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                 ;
+; CBXI_PARAMETER         ; mux_dlc   ; Untyped                                                                 ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                 ;
++------------------------+-----------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_MEM:inst16|mux_2x32:mux_sel_data|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                     ;
++------------------------+-----------+--------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                           ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                           ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                           ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                           ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; mux_dlc   ; Untyped                                                                  ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                  ;
++------------------------+-----------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component ;
++------------------------+-----------+----------------------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                                             ;
++------------------------+-----------+----------------------------------------------------------------------------------+
+; lpm_width              ; 32        ; Signed Integer                                                                   ;
+; LPM_REPRESENTATION     ; UNSIGNED  ; Untyped                                                                          ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                                          ;
+; CHAIN_SIZE             ; 8         ; Untyped                                                                          ;
+; ONE_INPUT_IS_CONSTANT  ; NO        ; Untyped                                                                          ;
+; CARRY_CHAIN            ; MANUAL    ; Untyped                                                                          ;
+; CASCADE_CHAIN          ; MANUAL    ; Untyped                                                                          ;
+; CARRY_CHAIN_LENGTH     ; 48        ; CARRY_CHAIN_LENGTH                                                               ;
+; CASCADE_CHAIN_LENGTH   ; 2         ; CASCADE_CHAIN_LENGTH                                                             ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                                          ;
+; CBXI_PARAMETER         ; cmpr_ufg  ; Untyped                                                                          ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                                   ;
++------------------------+-----------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: etapa_WB:inst15|mux_2x32:muxWB|lpm_mux:LPM_MUX_component ;
++------------------------+-----------+------------------------------------------------------------------+
+; Parameter Name         ; Value     ; Type                                                             ;
++------------------------+-----------+------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                                                   ;
+; LPM_WIDTH              ; 32        ; Signed Integer                                                   ;
+; LPM_SIZE               ; 2         ; Signed Integer                                                   ;
+; LPM_WIDTHS             ; 1         ; Signed Integer                                                   ;
+; LPM_PIPELINE           ; 0         ; Untyped                                                          ;
+; CBXI_PARAMETER         ; mux_dlc   ; Untyped                                                          ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                                                          ;
++------------------------+-----------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                               ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Name                                      ; Value                                                              ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                  ;
+; Entity Instance                           ; etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                ;
+;     -- WIDTH_A                            ; 14                                                                 ;
+;     -- NUMWORDS_A                         ; 64                                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 1                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
+; Entity Instance                           ; etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                          ;
+;     -- WIDTH_A                            ; 8                                                                  ;
+;     -- NUMWORDS_A                         ; 8                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 8                                                                  ;
+;     -- NUMWORDS_B                         ; 8                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
++-------------------------------------------+--------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "etapa_MEM:inst16|mux_2x32:mux_sel_mem" ;
++---------------+-------+----------+--------------------------------+
+; Port          ; Type  ; Severity ; Details                        ;
++---------------+-------+----------+--------------------------------+
+; data1x[31..8] ; Input ; Info     ; Stuck at GND                   ;
++---------------+-------+----------+--------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "etapa_MEM:inst16|mux_2x32:mux_sel_pcmem" ;
++--------+-------+----------+-----------------------------------------+
+; Port   ; Type  ; Severity ; Details                                 ;
++--------+-------+----------+-----------------------------------------+
+; data1x ; Input ; Info     ; Stuck at GND                            ;
++--------+-------+----------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "etapa_ID:inst5|mux_2x3:mux_sel_dest" ;
++-----------+-------+----------+----------------------------------+
+; Port      ; Type  ; Severity ; Details                          ;
++-----------+-------+----------+----------------------------------+
+; data1x[2] ; Input ; Info     ; Stuck at GND                     ;
++-----------+-------+----------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "etapa_ID:inst5|registros_sca:reg_s"                                                                                                                                                 ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                          ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reg_sca1 ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "etapa_IF:inst|mux_8x6:muxDir"                                                                                                                                                             ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data0x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data0x[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data1x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data1x[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data2x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data2x[5..3] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data2x[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data2x[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data3x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data3x[5..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data3x[2..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data3x[3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data4x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data4x[3..2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data4x[5..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data4x[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data5x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data5x[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data5x[5]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data5x[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data6x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data6x[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data6x[5]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data6x[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data6x[3]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data6x[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data7x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data7x[4..2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; data7x[5]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data7x[1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; data7x[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 174                         ;
+;     plain             ; 174                         ;
+; arriav_lcell_comb     ; 120                         ;
+;     arith             ; 31                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 88                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 42                          ;
+; boundary_port         ; 102                         ;
+; stratixv_ram_block    ; 12                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.66                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,10 +988,16 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 08 12:40:31 2018
+    Info: Processing started: Tue Apr 10 10:41:36 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProVec -c ProVec
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x6.v
+    Info (12023): Found entity 1: mux_2x6 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x6.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file mux_8x6.v
+    Info (12023): Found entity 1: mux_8x6 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x6.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file suma_pc.v
+    Info (12023): Found entity 1: suma_PC File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/suma_PC.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file rom_memory.v
     Info (12023): Found entity 1: rom_memory File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/rom_memory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file compare_pcmem.v
@@ -173,8 +1006,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file provec.
     Info (12023): Found entity 1: ProVec
 Info (12021): Found 1 design units, including 1 entities, in source file unidad_control.v
     Info (12023): Found entity 1: unidad_control File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/unidad_control.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file suma_pc.v
-    Info (12023): Found entity 1: suma_PC File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/suma_PC.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file registros_vec.v
     Info (12023): Found entity 1: registros_vec File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registros_vec.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file registros_sca.v
@@ -191,8 +1022,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file registr
     Info (12023): Found entity 1: registro_ID_EXE File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_ID_EXE.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file registro_exe_mem.v
     Info (12023): Found entity 1: registro_EXE_MEM File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_EXE_MEM.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_8x10.v
-    Info (12023): Found entity 1: mux_8x10 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x10.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file mux_3x32.v
     Info (12023): Found entity 1: mux_3x32 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_3x32.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file mux_2x32.v
@@ -222,7 +1051,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file adelant
 Info (12127): Elaborating entity "ProVec" for the top level hierarchy
 Info (12128): Elaborating entity "registro_EXE_MEM" for hierarchy "registro_EXE_MEM:inst10"
 Info (12128): Elaborating entity "registro_ID_EXE" for hierarchy "registro_ID_EXE:inst7"
-Warning (10034): Output port "dir_dest_out" at registro_ID_EXE.v(99) has no driver File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/registro_ID_EXE.v Line: 99
 Info (12128): Elaborating entity "registro_IF_ID" for hierarchy "registro_IF_ID:inst3"
 Info (12128): Elaborating entity "unidad_control" for hierarchy "unidad_control:inst2"
 Info (12128): Elaborating entity "etapa_IF" for hierarchy "etapa_IF:inst"
@@ -235,10 +1063,10 @@ Info (12133): Instantiated megafunction "etapa_IF:inst|suma_PC:sumaPC|lpm_add_su
     Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES,CIN_USED=NO"
     Info (12134): Parameter "lpm_representation" = "UNSIGNED"
     Info (12134): Parameter "lpm_type" = "LPM_ADD_SUB"
-    Info (12134): Parameter "lpm_width" = "10"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dmh.tdf
-    Info (12023): Found entity 1: add_sub_dmh File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/add_sub_dmh.tdf Line: 23
-Info (12128): Elaborating entity "add_sub_dmh" for hierarchy "etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component|add_sub_dmh:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 119
+    Info (12134): Parameter "lpm_width" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2lh.tdf
+    Info (12023): Found entity 1: add_sub_2lh File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/add_sub_2lh.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_2lh" for hierarchy "etapa_IF:inst|suma_PC:sumaPC|lpm_add_sub:LPM_ADD_SUB_component|add_sub_2lh:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 119
 Info (12128): Elaborating entity "rom_memory" for hierarchy "etapa_IF:inst|rom_memory:ROMMemory" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v Line: 49
 Info (12128): Elaborating entity "altsyncram" for hierarchy "etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/rom_memory.v Line: 82
 Info (12130): Elaborated megafunction instantiation "etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/rom_memory.v Line: 82
@@ -260,39 +1088,189 @@ Info (12133): Instantiated megafunction "etapa_IF:inst|rom_memory:ROMMemory|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l8g1.tdf
     Info (12023): Found entity 1: altsyncram_l8g1 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_l8g1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_l8g1" for hierarchy "etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (38) in the Memory Initialization File "C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/program.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/rom_memory.v Line: 82
-Info (12128): Elaborating entity "mux_2x10" for hierarchy "etapa_IF:inst|mux_2x10:muxPC" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v Line: 56
-Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_IF:inst|mux_2x10:muxPC|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x10.v Line: 69
-Info (12130): Elaborated megafunction instantiation "etapa_IF:inst|mux_2x10:muxPC|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x10.v Line: 69
-Info (12133): Instantiated megafunction "etapa_IF:inst|mux_2x10:muxPC|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x10.v Line: 69
+Info (12128): Elaborating entity "mux_2x6" for hierarchy "etapa_IF:inst|mux_2x6:muxPC" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v Line: 56
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x6.v Line: 69
+Info (12130): Elaborated megafunction instantiation "etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x6.v Line: 69
+Info (12133): Instantiated megafunction "etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x6.v Line: 69
     Info (12134): Parameter "lpm_size" = "2"
     Info (12134): Parameter "lpm_type" = "LPM_MUX"
-    Info (12134): Parameter "lpm_width" = "10"
+    Info (12134): Parameter "lpm_width" = "6"
     Info (12134): Parameter "lpm_widths" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_9lc.tdf
-    Info (12023): Found entity 1: mux_9lc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_9lc.tdf Line: 23
-Info (12128): Elaborating entity "mux_9lc" for hierarchy "etapa_IF:inst|mux_2x10:muxPC|lpm_mux:LPM_MUX_component|mux_9lc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
-Info (12128): Elaborating entity "mux_8x10" for hierarchy "etapa_IF:inst|mux_8x10:muxDir" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v Line: 69
-Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_IF:inst|mux_8x10:muxDir|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x10.v Line: 85
-Info (12130): Elaborated megafunction instantiation "etapa_IF:inst|mux_8x10:muxDir|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x10.v Line: 85
-Info (12133): Instantiated megafunction "etapa_IF:inst|mux_8x10:muxDir|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x10.v Line: 85
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ujc.tdf
+    Info (12023): Found entity 1: mux_ujc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_ujc.tdf Line: 23
+Info (12128): Elaborating entity "mux_ujc" for hierarchy "etapa_IF:inst|mux_2x6:muxPC|lpm_mux:LPM_MUX_component|mux_ujc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "mux_8x6" for hierarchy "etapa_IF:inst|mux_8x6:muxDir" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_IF.v Line: 69
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x6.v Line: 85
+Info (12130): Elaborated megafunction instantiation "etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x6.v Line: 85
+Info (12133): Instantiated megafunction "etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_8x6.v Line: 85
     Info (12134): Parameter "lpm_size" = "8"
     Info (12134): Parameter "lpm_type" = "LPM_MUX"
-    Info (12134): Parameter "lpm_width" = "10"
+    Info (12134): Parameter "lpm_width" = "6"
     Info (12134): Parameter "lpm_widths" = "3"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_hlc.tdf
-    Info (12023): Found entity 1: mux_hlc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_hlc.tdf Line: 23
-Info (12128): Elaborating entity "mux_hlc" for hierarchy "etapa_IF:inst|mux_8x10:muxDir|lpm_mux:LPM_MUX_component|mux_hlc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_6kc.tdf
+    Info (12023): Found entity 1: mux_6kc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_6kc.tdf Line: 23
+Info (12128): Elaborating entity "mux_6kc" for hierarchy "etapa_IF:inst|mux_8x6:muxDir|lpm_mux:LPM_MUX_component|mux_6kc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
 Info (12128): Elaborating entity "adelantamiento" for hierarchy "adelantamiento:inst4"
 Info (12128): Elaborating entity "etapa_EXE" for hierarchy "etapa_EXE:inst8"
 Info (12128): Elaborating entity "alu" for hierarchy "etapa_EXE:inst8|alu:alu1" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v Line: 78
-Error (10043): Verilog HDL unsupported feature error at alu.v(16): Procedural Continuous Assignment to register is not supported File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/alu.v Line: 16
-Warning (10270): Verilog HDL Case Statement warning at alu.v(15): incomplete case statement has no default case item File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/alu.v Line: 15
-Error (12152): Can't elaborate user hierarchy "etapa_EXE:inst8|alu:alu1" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v Line: 78
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 4 warnings
-    Error: Peak virtual memory: 711 megabytes
-    Error: Processing ended: Sun Apr 08 12:40:41 2018
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:22
+Info (12128): Elaborating entity "mux_3x32" for hierarchy "etapa_EXE:inst8|mux_3x32:mux_sel_vec" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v Line: 107
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_3x32.v Line: 70
+Info (12130): Elaborated megafunction instantiation "etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_3x32.v Line: 70
+Info (12133): Instantiated megafunction "etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_3x32.v Line: 70
+    Info (12134): Parameter "lpm_size" = "3"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_flc.tdf
+    Info (12023): Found entity 1: mux_flc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_flc.tdf Line: 23
+Info (12128): Elaborating entity "mux_flc" for hierarchy "etapa_EXE:inst8|mux_3x32:mux_sel_vec|lpm_mux:LPM_MUX_component|mux_flc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "mux_2x32" for hierarchy "etapa_EXE:inst8|mux_2x32:mux_sel_int" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v Line: 114
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x32.v Line: 69
+Info (12130): Elaborated megafunction instantiation "etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x32.v Line: 69
+Info (12133): Instantiated megafunction "etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x32.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_dlc.tdf
+    Info (12023): Found entity 1: mux_dlc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_dlc.tdf Line: 23
+Info (12128): Elaborating entity "mux_dlc" for hierarchy "etapa_EXE:inst8|mux_2x32:mux_sel_int|lpm_mux:LPM_MUX_component|mux_dlc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "mux_2x8" for hierarchy "etapa_EXE:inst8|mux_2x8:mux_sel_op" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_EXE.v Line: 122
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x8.v Line: 69
+Info (12130): Elaborated megafunction instantiation "etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x8.v Line: 69
+Info (12133): Instantiated megafunction "etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x8.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_0kc.tdf
+    Info (12023): Found entity 1: mux_0kc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_0kc.tdf Line: 23
+Info (12128): Elaborating entity "mux_0kc" for hierarchy "etapa_EXE:inst8|mux_2x8:mux_sel_op|lpm_mux:LPM_MUX_component|mux_0kc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "etapa_ID" for hierarchy "etapa_ID:inst5"
+Info (12128): Elaborating entity "registros_vec" for hierarchy "etapa_ID:inst5|registros_vec:reg_v" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_ID.v Line: 118
+Info (12128): Elaborating entity "registros_sca" for hierarchy "etapa_ID:inst5|registros_sca:reg_s" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_ID.v Line: 133
+Warning (276027): Inferred dual-clock RAM node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 3
+        Info (286033): Parameter NUMWORDS_A set to 8
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 3
+        Info (286033): Parameter NUMWORDS_B set to 8
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12128): Elaborating entity "altsyncram" for hierarchy "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1"
+Info (12130): Elaborated megafunction instantiation "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1"
+Info (12133): Instantiated megafunction "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "3"
+    Info (12134): Parameter "NUMWORDS_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "3"
+    Info (12134): Parameter "NUMWORDS_B" = "8"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_spj1.tdf
+    Info (12023): Found entity 1: altsyncram_spj1 File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_spj1" for hierarchy "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "mux_2x3" for hierarchy "etapa_ID:inst5|mux_2x3:mux_sel_dest" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_ID.v Line: 141
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x3.v Line: 69
+Info (12130): Elaborated megafunction instantiation "etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x3.v Line: 69
+Info (12133): Instantiated megafunction "etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/mux_2x3.v Line: 69
+    Info (12134): Parameter "lpm_size" = "2"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "3"
+    Info (12134): Parameter "lpm_widths" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rjc.tdf
+    Info (12023): Found entity 1: mux_rjc File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/mux_rjc.tdf Line: 23
+Info (12128): Elaborating entity "mux_rjc" for hierarchy "etapa_ID:inst5|mux_2x3:mux_sel_dest|lpm_mux:LPM_MUX_component|mux_rjc:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "registro_MEM_WB" for hierarchy "registro_MEM_WB:inst12"
+Info (12128): Elaborating entity "etapa_MEM" for hierarchy "etapa_MEM:inst16"
+Info (12128): Elaborating entity "registro_PCMEM" for hierarchy "etapa_MEM:inst16|registro_PCMEM:reg_pcmem" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_MEM.v Line: 49
+Info (12128): Elaborating entity "compare_pcmem" for hierarchy "etapa_MEM:inst16|compare_pcmem:compare" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_MEM.v Line: 76
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/compare_pcmem.v Line: 63
+Info (12130): Elaborated megafunction instantiation "etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/compare_pcmem.v Line: 63
+Info (12133): Instantiated megafunction "etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component" with the following parameter: File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/compare_pcmem.v Line: 63
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "32"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ufg.tdf
+    Info (12023): Found entity 1: cmpr_ufg File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/cmpr_ufg.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_ufg" for hierarchy "etapa_MEM:inst16|compare_pcmem:compare|lpm_compare:LPM_COMPARE_component|cmpr_ufg:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_compare.tdf Line: 281
+Info (12128): Elaborating entity "sum_pcmem" for hierarchy "etapa_MEM:inst16|sum_pcmem:sum" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/etapa_MEM.v Line: 82
+Info (12128): Elaborating entity "etapa_WB" for hierarchy "etapa_WB:inst15"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[0]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 40
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[1]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 70
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[2]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 100
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[3]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 130
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[4]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 160
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[5]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 190
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[6]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 220
+        Warning (14320): Synthesized away node "etapa_ID:inst5|registros_sca:reg_s|altsyncram:mem[0][7]__1|altsyncram_spj1:auto_generated|q_b[7]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_spj1.tdf Line: 250
+        Warning (14320): Synthesized away node "etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|q_a[8]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_l8g1.tdf Line: 203
+        Warning (14320): Synthesized away node "etapa_IF:inst|rom_memory:ROMMemory|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|q_a[9]" File: C:/Users/Oscar/Desktop/Proc_Vec_ACII/procesador_vectorial/db/altsyncram_l8g1.tdf Line: 224
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 50 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 32 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "data_mem[31]"
+    Warning (15610): No output dependent on input pin "data_mem[30]"
+    Warning (15610): No output dependent on input pin "data_mem[29]"
+    Warning (15610): No output dependent on input pin "data_mem[28]"
+    Warning (15610): No output dependent on input pin "data_mem[27]"
+    Warning (15610): No output dependent on input pin "data_mem[26]"
+    Warning (15610): No output dependent on input pin "data_mem[25]"
+    Warning (15610): No output dependent on input pin "data_mem[24]"
+    Warning (15610): No output dependent on input pin "data_mem[23]"
+    Warning (15610): No output dependent on input pin "data_mem[22]"
+    Warning (15610): No output dependent on input pin "data_mem[21]"
+    Warning (15610): No output dependent on input pin "data_mem[20]"
+    Warning (15610): No output dependent on input pin "data_mem[19]"
+    Warning (15610): No output dependent on input pin "data_mem[18]"
+    Warning (15610): No output dependent on input pin "data_mem[17]"
+    Warning (15610): No output dependent on input pin "data_mem[16]"
+    Warning (15610): No output dependent on input pin "data_mem[15]"
+    Warning (15610): No output dependent on input pin "data_mem[14]"
+    Warning (15610): No output dependent on input pin "data_mem[13]"
+    Warning (15610): No output dependent on input pin "data_mem[12]"
+    Warning (15610): No output dependent on input pin "data_mem[11]"
+    Warning (15610): No output dependent on input pin "data_mem[10]"
+    Warning (15610): No output dependent on input pin "data_mem[9]"
+    Warning (15610): No output dependent on input pin "data_mem[8]"
+    Warning (15610): No output dependent on input pin "data_mem[7]"
+    Warning (15610): No output dependent on input pin "data_mem[6]"
+    Warning (15610): No output dependent on input pin "data_mem[5]"
+    Warning (15610): No output dependent on input pin "data_mem[4]"
+    Warning (15610): No output dependent on input pin "data_mem[3]"
+    Warning (15610): No output dependent on input pin "data_mem[2]"
+    Warning (15610): No output dependent on input pin "data_mem[1]"
+    Warning (15610): No output dependent on input pin "data_mem[0]"
+Info (21057): Implemented 335 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 69 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 221 logic cells
+    Info (21064): Implemented 12 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 775 megabytes
+    Info: Processing ended: Tue Apr 10 10:41:49 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 
