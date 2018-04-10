@@ -45,9 +45,9 @@ begin
 	if(reg_rd)begin
     sca1 = mem[reg_sca1];
 	 reg0=mem[0];
-	 reg0=mem[1];
-	 reg0=mem[2];
-	 reg0=mem[3];
+	 reg1=mem[1];
+	 reg2=mem[2];
+	 reg3=mem[3];
 	 
 	 end
 	 

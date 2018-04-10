@@ -24,12 +24,12 @@ NOP = "00000000000000";
 
 ############################################################
 #funcion que agrega los ceros necesarios para los registros en la instruccion en binario
-def agregaCeros(reg,num): 
+def agregaCeros(reg,num):
     ceros = ""
     while len(ceros) < (num-len(bin(int(reg))[2:])): #Mientras el numero final sea menor al necesario
         ceros += "0"
     reg = ceros + bin(int(reg))[2:];  #Agrega ceros necesarios del registro
-    return reg 
+    return reg
 
 ############################################################
 #funcion para obtener el opcode
@@ -44,7 +44,7 @@ def opCodeOptain(opcode):
     return [binary,n];
 
 ############################################################
-         
+
 def binario(instruction):
     salida = opCodeOptain(instruction[0].upper());
     opcode = salida[0];
@@ -75,13 +75,13 @@ def binario(instruction):
                 return(opcode+dest+dato1+dato2);
         else:
             return -1;
-    
+
     elif(len(instruction)==3):
         reg = "";
         dir_mem = "";
         dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario
         if(formatList[n] == 1): # load/store y MOV
-            dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario   
+            dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario
             reg = agregaCeros(instruction[1][2:],2);
             if(n == 3): # load, debe agregar NOP despues
                 return(opcode+reg+dir_mem+"NOP");
@@ -90,11 +90,11 @@ def binario(instruction):
         elif(formatList[n] == 2):
             dest = agregaCeros(instruction[1][1:],2); # en ese caso dir_mem es un inmediato
             return(opcode+dest+dir_mem);
-            
+
         else:
             return -1;
-        
-    elif(len(instruction)==2):        
+
+    elif(len(instruction)==2):
         if(formatList[n] == 2):    # VFS, LPC y SPC
             dest = agregaCeros(instruction[1][2:],3); # dest para VFS, reg para PPC y SCP
             if(n == 13): #VFS se agrega NOP antes
@@ -103,7 +103,7 @@ def binario(instruction):
                 return(opcode+dest+"0000000");
         else:
             return -1;
-    else: 
+    else:
         return -1;
 
 
@@ -115,7 +115,7 @@ def agrega(instruction,line):
         return -1;
     else:
         instruction = instruction.split(";");                 # se revisan comentarios
-        instruction = instruction[0].replace("\t","");        # se eliminan los \t        
+        instruction = instruction[0].replace("\t","");        # se eliminan los \t
         instruction = instruction.replace(" ","").split(","); #se eliminan espacios en blanco y se separa en lista.
         j = 0;
         for i in instruction:
@@ -138,18 +138,18 @@ def mif(origen,destino,DEPTH):
     with open(destino, 'w', encoding="utf8") as archive:
         print("-- Memory Initialization File", file=archive);
         print(("\nDEPTH = "+ str(DEPTH) +";"), file=archive);
-        print("WIDTH = 14;", file=archive);        
-        print("\nADDRESS_RADIX = DEC;", file=archive);
+        print("WIDTH = 14;", file=archive);
+        print("\nADDRESS_RADIX = UNS;", file=archive);
         print("DATA_RADIX = BIN;", file=archive);
-        print("\nBEGIN", file=archive);
+        print("\nCONTENT BEGIN", file=archive);
         with open(origen, encoding="utf8") as file: #Abre y lee el archivo
             contador = 0;
             for line in file:
                 print((str(contador) + " : " + line[:14] + ";"), file=archive);
                 contador += 1;
-        
+
         print("END;", file=archive);
-    
+
 
 #############################################################
 #Lectura y escritura de archivo
@@ -171,7 +171,7 @@ def write(instructionTable,target):      #Escritura de archivo
                     print(NOP, file=archive);
                 else:
                     print(binario(element), file=archive);
-            else:                    
+            else:
                 print("Error en el codigo fuente");
                 return -1;
     print("Compilación en binario con exito, generando mif");
@@ -193,7 +193,6 @@ def read(source,target): #Lee el archivo origen
     if(error == False): #Si no da error continua
         write(instructionTable,target);
         print("Finalizado con exito");
-        
 
-read('code1.txt','program.bin')            
 
+read('code1.txt','program.bin')

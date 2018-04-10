@@ -131,6 +131,7 @@ begin
 	sca1<=sca1_in;
 	inmediato<=inmediato_in;
 	shift<=shift_in;
+	dir_dest <= dir_dest_in;
 
 	//EXE
 	sel_op<=sel_op_in;
@@ -158,6 +159,7 @@ begin
 	sca1_out<=sca1;
 	inmediato_out<=inmediato;
 	shift_out<=shift;
+	dir_dest_out <= dir_dest;
 
 	//EXE
 	sel_op_out<=sel_op;

@@ -105,7 +105,7 @@ assign shift[7:3]=5'b00000;
 
 
 
-registros_v reg_v(
+registros_vec reg_v(
 						.clk(clk),
 						.reg_wr(reg_wrv),
 						.reg_rd(reg_rdv), 
