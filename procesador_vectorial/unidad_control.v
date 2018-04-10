@@ -1,5 +1,8 @@
 module unidad_control(
 	opcode_in,
+	
+	//fetch
+	sel_pc,
 	//decode						
 	reg_rdv,
 	reg_rds,
@@ -23,6 +26,7 @@ module unidad_control(
 
 input wire [3:0] opcode_in;
 
+output reg sel_pc;
 output reg reg_rdv;
 output reg reg_rds;
 output reg sel_dest;
@@ -46,6 +50,9 @@ begin
     case (opcode_in)
 		4'b0000: 
 			begin
+				//fetch
+				sel_pc<=0;
+			
 				//decode
 				sel_dest<=0;
 				reg_rdv<=0;
@@ -69,6 +76,9 @@ begin
 			end
 		4'b0001:
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -93,6 +103,9 @@ begin
 			end
 		4'b0010: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -117,6 +130,9 @@ begin
 			end
 		4'b0011: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=1;
 				reg_rdv<=1;
@@ -141,6 +157,9 @@ begin
 			end
 		4'b0100: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=1;
 				reg_rdv<=1;
@@ -165,6 +184,9 @@ begin
 			end
 		4'b0101: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -188,6 +210,9 @@ begin
 			end
 		4'b0110: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -212,6 +237,9 @@ begin
 			end
 		4'b0111: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -236,6 +264,9 @@ begin
 			end
 		4'b1000:
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -260,6 +291,9 @@ begin
 			end
 		4'b1001: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -283,6 +317,9 @@ begin
 			end
 		4'b1010: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -306,6 +343,9 @@ begin
 			end
 		4'b1011: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=1;
@@ -329,6 +369,9 @@ begin
 			end
 		4'b1100: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=1;
 				reg_rdv<=0;
@@ -353,6 +396,9 @@ begin
 			end
 		4'b1101: 
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=0;
 				reg_rdv<=0;
@@ -377,6 +423,9 @@ begin
 			end
 		4'b1110:
 			begin
+				//fetch
+				sel_pc<=0;
+				
 				//decode
 				sel_dest<=1;
 				reg_rdv<=1;
@@ -400,6 +449,9 @@ begin
 			end
 		4'b1111:
 			begin
+				//fetch
+				sel_pc<=1;
+				
 				//decode
 				sel_dest<=1;
 				reg_rdv<=1;
