@@ -98,7 +98,7 @@ reg sum_mem, sel_mem, sel_data, mem_wr;
 //WB
 reg sel_wb, reg_wrv, reg_wrs;
 
-always @(posedge clk) // lee en el posedge
+always @(posedge clk) // lee en el posedge (Le llega el dato en el posedge)
 begin
     instruction<=instruction_in;
 
@@ -122,7 +122,7 @@ begin
 	reg_wrv<=reg_wrv_in;
 	reg_wrs<=reg_wrs_in;
 end
-always @(negedge clk) // escritura en el negedge
+always @(negedge clk) // escritura en el negedge (Suelta el dato en el negedge)
 begin
 	instruction_out<=instruction;
 

@@ -38,6 +38,7 @@ initial begin
     mem[7] <= 0; //         
 end
 
+//En negedge captura el dato
 
 
 always @(posedge clk)
