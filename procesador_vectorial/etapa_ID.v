@@ -16,11 +16,12 @@ module etapa_ID(clk,
 					shift,
 					inmediato,
 					
-					reg_wrv, //señales de control
-					reg_wrs,
-					reg_rdv,
-					reg_rds,
-					sel_dest
+					//Señales de control
+					reg_wrv, //Escritura vectorial
+					reg_wrs, //Escritura escalar
+					reg_rdv, //Lectura vectorial
+					reg_rds, //Lectura escalar
+					sel_dest //Señal que escoge entre destino de 2 o 3 bits, depende de la instruccion.
 					);
 
 
