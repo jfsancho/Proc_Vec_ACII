@@ -1,14 +1,18 @@
 module registro_IF_ID(
+
 	//señales de control
 	//Decodificador de entrada
 	reg_rdv_in,
 	reg_rds_in,
 	sel_dest_in,
+	sel_ad_in,
+	
 	//EXE
 	sel_op_in,
 	sel_vec_in,
 	sel_int_in,
 	opcode_in,
+	
 	//Memory
 	sum_mem_in,
 	sel_mem_in,
@@ -24,11 +28,14 @@ module registro_IF_ID(
 	reg_rdv_out,
 	reg_rds_out,
 	sel_dest_out,
+	sel_ad_out,
+	
 	//EXE
 	sel_op_out,
 	sel_vec_out,
 	sel_int_out,
 	opcode_out,
+	
 	//Memory
 	sum_mem_out,
 	sel_mem_out,
@@ -51,7 +58,7 @@ module registro_IF_ID(
 input wire clk;
 
 //DECODIFICADOR Entrada
-input wire reg_rdv_in, reg_rds_in, sel_dest_in;
+input wire reg_rdv_in, reg_rds_in, sel_dest_in, sel_ad_in;
 
 //EXE
 input wire sel_op_in, sel_int_in;
@@ -71,7 +78,7 @@ output reg [13:0] instruction_out;
 
 //WIRES DE SALIDA DE LAS SEÑALES
 //DECODIFICADOR DE SALIDA
-output reg reg_rdv_out, reg_rds_out, sel_dest_out;
+output reg reg_rdv_out, reg_rds_out, sel_dest_out, sel_ad_out;
 
 //EXE
 output reg sel_op_out, sel_int_out;
@@ -86,7 +93,7 @@ output reg sel_wb_out, reg_wrv_out, reg_wrs_out;
 
 //REGISTROS DE LAS SEÑALES DE control
 //Decodificador
-reg reg_rdv, reg_rds, sel_dest;
+reg reg_rdv, reg_rds, sel_dest, sel_ad;
 //EXE
 reg sel_op, sel_int;
 reg [1:0] sel_vec;
@@ -106,6 +113,7 @@ begin
 	reg_rdv <= reg_rdv_in;
 	reg_rds <= reg_rds_in;
 	sel_dest <= sel_dest_in;
+	sel_ad <= sel_ad_in;
 	//EXE
 	sel_op<=sel_op_in;
 	sel_vec<=sel_vec_in;
@@ -130,6 +138,7 @@ begin
 	reg_rdv_out <= reg_rdv;
 	reg_rds_out <= reg_rds;
 	sel_dest_out <= sel_dest;
+	sel_ad_out <= sel_ad;
 	//EXE
 	sel_op_out<=sel_op;
 	sel_vec_out<=sel_vec;

@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2016  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -1393,7 +1393,7 @@ agreement for further details.
 	(annotation_block (parameter)(rect -304 88 -77 259))
 )
 (symbol
-	(rect -8 -56 224 248)
+	(rect -16 -56 216 248)
 	(text "unidad_control" (rect 5 0 75 12)(font "Arial" ))
 	(text "inst1" (rect 8 288 30 305)(font "Intel Clear" ))
 	(port
@@ -1511,63 +1511,6 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 216 288))
 	)
-)
-(connector
-	(pt 224 8)
-	(pt 304 8)
-)
-(connector
-	(pt 224 24)
-	(pt 304 24)
-)
-(connector
-	(pt 224 40)
-	(pt 304 40)
-)
-(connector
-	(pt 224 72)
-	(pt 304 72)
-)
-(connector
-	(pt 224 88)
-	(pt 304 88)
-	(bus)
-)
-(connector
-	(pt 224 104)
-	(pt 304 104)
-)
-(connector
-	(pt 224 120)
-	(pt 304 120)
-)
-(connector
-	(pt 224 136)
-	(pt 304 136)
-)
-(connector
-	(pt 224 152)
-	(pt 304 152)
-)
-(connector
-	(pt 224 168)
-	(pt 304 168)
-)
-(connector
-	(pt 224 184)
-	(pt 304 184)
-)
-(connector
-	(pt 304 200)
-	(pt 224 200)
-)
-(connector
-	(pt 224 -8)
-	(pt 304 -8)
-)
-(connector
-	(pt 224 56)
-	(pt 256 56)
 )
 (connector
 	(pt 128 -144)
@@ -2680,26 +2623,12 @@ agreement for further details.
 	(pt 808 840)
 )
 (connector
-	(pt 256 56)
-	(pt 256 -80)
-)
-(connector
 	(pt 256 -80)
 	(pt 80 -80)
 )
 (connector
 	(pt 80 -144)
 	(pt 80 -80)
-)
-(connector
-	(pt -32 -24)
-	(pt -32 312)
-	(bus)
-)
-(connector
-	(pt -32 -24)
-	(pt -8 -24)
-	(bus)
 )
 (connector
 	(pt -352 -72)
@@ -2710,12 +2639,83 @@ agreement for further details.
 	(pt 240 -72)
 )
 (connector
-	(pt 224 -24)
+	(pt 256 -80)
+	(pt 256 56)
+)
+(connector
+	(pt -32 312)
+	(pt -32 -24)
+	(bus)
+)
+(connector
+	(pt -32 -24)
+	(pt -16 -24)
+	(bus)
+)
+(connector
+	(pt 240 -72)
 	(pt 240 -24)
 )
 (connector
+	(pt 216 -24)
 	(pt 240 -24)
-	(pt 240 -72)
+)
+(connector
+	(pt 216 -8)
+	(pt 304 -8)
+)
+(connector
+	(pt 216 8)
+	(pt 304 8)
+)
+(connector
+	(pt 216 24)
+	(pt 304 24)
+)
+(connector
+	(pt 216 40)
+	(pt 304 40)
+)
+(connector
+	(pt 216 56)
+	(pt 256 56)
+)
+(connector
+	(pt 216 72)
+	(pt 304 72)
+)
+(connector
+	(pt 216 88)
+	(pt 304 88)
+	(bus)
+)
+(connector
+	(pt 216 104)
+	(pt 304 104)
+)
+(connector
+	(pt 216 120)
+	(pt 304 120)
+)
+(connector
+	(pt 216 136)
+	(pt 304 136)
+)
+(connector
+	(pt 216 152)
+	(pt 304 152)
+)
+(connector
+	(pt 216 168)
+	(pt 304 168)
+)
+(connector
+	(pt 216 184)
+	(pt 304 184)
+)
+(connector
+	(pt 216 200)
+	(pt 304 200)
 )
 (junction (pt 1928 408))
 (junction (pt 2728 88))
