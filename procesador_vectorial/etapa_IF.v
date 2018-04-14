@@ -3,8 +3,7 @@ module etapa_IF(clk,
 	sel_pc, //Entrada de selección de pc en el mux_pc
 
 	// Salidas
-	instruccion,
-	opcode
+	instruccion
 );
 
 input wire clk;
@@ -29,7 +28,6 @@ parameter decrypt_circ_shift_dir = 6'b010000; //16
 parameter encrypt_add_dir = 6'b010100;//20
 parameter decrypt_add_dir = 6'b011101; //29
 
-assign opcode = instruccion [13:10];
 
 registro_PC registroPC(
 	.clk(clk),
