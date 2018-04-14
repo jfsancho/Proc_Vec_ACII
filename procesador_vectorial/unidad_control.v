@@ -45,6 +45,10 @@ output reg sel_wb;
 output reg reg_wrv;
 output reg reg_wrs;
 
+initial begin
+	sel_pc <= 0; 
+end
+
 always @* //cada cuando tiene que verificar, siempre? o cuando ocurre un cambio en especifico
 begin
     case (opcode_in)

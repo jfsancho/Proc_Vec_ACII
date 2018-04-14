@@ -9,7 +9,7 @@ module registro_IF_ID(
 	
 	//EXE
 	sel_op_in,
-	sel_vec_in,
+	//sel_vec_in,
 	sel_int_in,
 	opcode_in,
 	
@@ -32,7 +32,7 @@ module registro_IF_ID(
 	
 	//EXE
 	sel_op_out,
-	sel_vec_out,
+	//sel_vec_out,
 	sel_int_out,
 	opcode_out,
 	
@@ -62,7 +62,7 @@ input wire reg_rdv_in, reg_rds_in, sel_dest_in, sel_ad_in;
 
 //EXE
 input wire sel_op_in, sel_int_in;
-input wire [1:0] sel_vec_in;
+//input wire [1:0] sel_vec_in;
 input wire [3:0] opcode_in;
 
 //MEM
@@ -116,7 +116,7 @@ begin
 	sel_ad <= sel_ad_in;
 	//EXE
 	sel_op<=sel_op_in;
-	sel_vec<=sel_vec_in;
+	//sel_vec<=sel_vec_in;
 	sel_int<=sel_int_in;
 	opcode<=opcode_in;
 	//Memory
@@ -141,7 +141,7 @@ begin
 	sel_ad_out <= sel_ad;
 	//EXE
 	sel_op_out<=sel_op;
-	sel_vec_out<=sel_vec;
+	//sel_vec_out<=sel_vec;
 	sel_int_out<=sel_int;
 	opcode_out<=opcode;
 	//Memory
