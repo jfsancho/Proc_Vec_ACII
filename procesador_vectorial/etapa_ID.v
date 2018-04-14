@@ -91,7 +91,7 @@ assign inmediato= instruccion[7:0];
 assign shift[2:0]=instruccion[5:3];
 assign shift[7:3]=5'b00000;
 
-assign opcode <= instruccion [13:10];
+assign opcode = instruccion [13:10];
 
 registros_vec reg_v(
 		.clk(clk),
