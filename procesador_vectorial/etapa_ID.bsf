@@ -143,6 +143,13 @@ agreement for further details.
 		(text "inmediato[7..0]" (rect 155 123 211 135)(font "Arial" ))
 		(line (pt 232 128)(pt 216 128)(line_width 3))
 	)
+	(port
+		(pt 232 144)
+		(output)
+		(text "opcode[3..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "opcode[3..0]" (rect 163 139 211 151)(font "Arial" ))
+		(line (pt 232 144)(pt 216 144)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 216 192)(line_width 1))
 	)

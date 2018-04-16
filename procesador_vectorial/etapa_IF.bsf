@@ -52,53 +52,46 @@ agreement for further details.
 		(text "instruccion[13..0]" (rect 131 27 195 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "opcode[3..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "opcode[3..0]" (rect 147 43 195 55)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
-	)
 	(parameter
 		"encrypt_xor_dir"
-		"0"
+		"000000"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"decrypt_xor_dir"
-		"100"
+		"000000"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"encrypt_shift_dir"
-		"200"
+		"000100"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"decrypt_shift_dir"
-		"300"
+		"001000"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"encrypt_circ_shift_dir"
-		"400"
+		"001100"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"decrypt_circ_shift_dir"
-		"500"
+		"010000"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"encrypt_add_dir"
-		"600"
+		"010100"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"decrypt_add_dir"
-		"700"
+		"011101"
 		""
-		(type "PARAMETER_SIGNED_DEC")	)
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 200 96)(line_width 1))
 	)

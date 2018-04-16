@@ -34,8 +34,8 @@ agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "dir_dest_EXE[2..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "dir_dest_EXE[2..0]" (rect 21 43 98 55)(font "Arial" ))
+		(text "dir_dest_MEM[2..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "dir_dest_MEM[2..0]" (rect 21 43 102 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
