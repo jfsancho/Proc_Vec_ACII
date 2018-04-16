@@ -44,7 +44,7 @@ input wire sel_dest;
 output wire [7:0] shift;
 output wire [7:0] inmediato;
 output wire [2:0] dir_dest_out;
-output reg [3:0] opcode;
+output wire [3:0] opcode;
 
 //cables de salidad de los bancos de registro
 output wire [31:0] data_vec1;
@@ -59,7 +59,7 @@ output wire [31:0] VFS;
 wire [2:0] wreg_vec1;
 wire [2:0] wreg_vec2;
 
-wire [3:0] wreg_sca1;
+wire [2:0] wreg_sca1;
 
 
 wire [7:0] data_reg0;
@@ -70,7 +70,7 @@ wire [7:0] data_reg3;
 //direccion de destino de diferentes instrucciones
 wire [2:0] dir_dest1, dir_dest2;
 
-
+//Cables (wires) que conforman a VFS
 assign VFS[7:0] =data_reg0;
 assign VFS[15:8]=data_reg1;
 assign VFS[23:16]=data_reg2;

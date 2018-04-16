@@ -16,9 +16,9 @@ module etapa_MEM(
 	data,
 	dir_dest_out,
 	inmediate_out,
-	
+
 	dir_mem,
-	
+
 	//Salida de prueba. Borrar después.
 	mem_wr, //Bandera de escritura de prueba
 	mem_out
@@ -49,9 +49,7 @@ assign dir_dest_out = dir_dest_in;
 //Cables extra solo para pruebas. Borrar después.
 output wire [31:0] mem_out; //Dato de salida de la mem de prueba
 wire [31:0] data_in_mem;
-wire [31:0] dir_mem_in;
 assign data_in_mem = data;	//Dato que ingresa a la memoria. Funciona para la escritura.
-assign dir_mem_in = dir_mem;
 input wire mem_wr;
 
 
@@ -92,11 +90,11 @@ sum_pcmem sum(
 	.dataa(pcmem_output),
 	.result(sum_mem_out),
 	.enable(sum_mem)
-);	
+);
 
 //Instancia de la memoria de prueba
 ram_v1 ram(
-	.address(dir_mem),
+	.address(dir_mem [7:0]), //Cambiar cuando la ram sea real
 	.clock(clk),
 	.data(data),
 	.wren(mem_wr),
@@ -104,26 +102,3 @@ ram_v1 ram(
 );
 
 endmodule
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

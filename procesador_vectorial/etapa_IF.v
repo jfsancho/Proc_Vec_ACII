@@ -10,7 +10,6 @@ input wire clk;
 input wire [2:0] sel_dir;
 input wire sel_pc;
 output wire [13:0] instruccion;
-output wire [3:0] opcode;
 
 wire [5:0] result_sel_dir;
 wire [5:0] result_sel_pc; //Wire de salida del mux de sel_pc y entrada al PC_REG.
