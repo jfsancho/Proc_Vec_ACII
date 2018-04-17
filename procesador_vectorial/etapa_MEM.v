@@ -49,7 +49,9 @@ assign dir_dest_out = dir_dest_in;
 //Cables extra solo para pruebas. Borrar después.
 output wire [31:0] mem_out; //Dato de salida de la mem de prueba
 wire [31:0] data_in_mem;
+wire [7:0] dir_mem_in;
 assign data_in_mem = data;	//Dato que ingresa a la memoria. Funciona para la escritura.
+assign dir_mem_in = dir_mem[7:0];
 input wire mem_wr;
 
 
@@ -94,7 +96,7 @@ sum_pcmem sum(
 
 //Instancia de la memoria de prueba
 ram_v1 ram(
-	.address(dir_mem [7:0]), //Cambiar cuando la ram sea real
+	.address(dir_mem[7:0]),
 	.clock(clk),
 	.data(data),
 	.wren(mem_wr),
