@@ -1,6 +1,6 @@
-CC = gcc
+CC = g++
 CFLAGS = -g -Wall
-SRC = image_proc.c
+SRC = main.cpp
 PROG = img
 
 OPENCV = `pkg-config opencv --cflags --libs`
