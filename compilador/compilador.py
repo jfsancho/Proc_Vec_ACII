@@ -49,7 +49,7 @@ def binario(instruction):
     salida = opCodeOptain(instruction[0].upper());
     opcode = salida[0];
     n = salida[1];
-    dest = "";
+    dest = "";    
     if(len(instruction)==4):                             # verifica la cantidad de argumentos
         if(formatList[n] == 0):                          # tipo general
             dato1 = "";
@@ -83,29 +83,50 @@ def binario(instruction):
         if(formatList[n] == 1): # load/store y MOV
             dir_mem = agregaCeros(int(instruction[2][2:],16),8); #se pasa la direccion hexa a binario
             reg = agregaCeros(instruction[1][2:],2);
-            if(n == 3): # load, debe agregar NOP despues
-                return(opcode+reg+dir_mem+"NOP");
-            else:
-                return(opcode+reg+dir_mem);
+            return(opcode+reg+dir_mem);            
         elif(formatList[n] == 2):
             dest = agregaCeros(instruction[1][1:],2); # en ese caso dir_mem es un inmediato
             return(opcode+dest+dir_mem);
-
         else:
             return -1;
 
     elif(len(instruction)==2):
         if(formatList[n] == 2):    # VFS, LPC y SPC
             dest = agregaCeros(instruction[1][2:],3); # dest para VFS, reg para PPC y SCP
-            if(n == 13): #VFS se agrega NOP antes
-                return("NOP"+opcode+dest+"0000000");
-            else:
-                return(opcode+dest+"0000000");
+            return(opcode+dest+"0000000");
         else:
             return -1;
+    elif(instruction[0] == "NOP"):
+        return(NOP);        
     else:
         return -1;
 
+#############################################################
+#Agrega NOPS para eliminar riesgos
+
+def riesgos(instructionTable):
+    i = 0;  #indice de la lista    
+    while(i < len(instructionTable)):  #mientras el indice sea mejor al largo de la lista        
+        if((i+1) < len(instructionTable)):
+            if((instructionTable[i][0] == "MOV") and (instructionTable[i+1][0] == "VFS" )):                
+                instructionTable.insert(i+1,["NOP"]);
+                i = i+1;
+            elif(instructionTable[i][0] == "VFS"):                
+                instructionTable.insert(i,["NOP"]);
+                i = i+1;             
+            elif(len(instructionTable[i+1]) == 2):
+                if((instructionTable[i][1] == instructionTable[i+1][1])):
+                    instructionTable.insert(i+1,["NOP"]);
+                    i = i+1;
+            elif(len(instructionTable[i+1]) == 3):                
+                if((instructionTable[i][1] == instructionTable[i+1][2])):
+                    instructionTable.insert(i+1,["NOP"]);
+                    i = i+1;
+            elif(len(instructionTable[i+1]) == 4):
+                if((instructionTable[i][1] == instructionTable[i+1][2]) or (instructionTable[i][1] == instructionTable[i+1][3])):
+                    instructionTable.insert(i+1,["NOP"]);                    
+                    i = i+1;              
+        i = i+1;
 
 #############################################################
 #Agrega las instrucciones a una tabla para verificar errores
@@ -154,30 +175,25 @@ def mif(origen,destino,DEPTH):
 #############################################################
 #Lectura y escritura de archivo
 
-def write(instructionTable,target):      #Escritura de archivo
-    size = 0;
-    with open(target, 'w', encoding="utf8") as archive:
-        for element in instructionTable: #Revisa la tabla para convertir a binario
-            test = binario(element);     #Agrega los datos en binario
-            if(test != -1):
-                size += 1;
-                if(test[:3] == "NOP"):
+def write(instructionTable,target):      #Escritura de archivo    
+    if(riesgos(instructionTable) == -1): #Si los riesgos retorna -1 es que hay errores
+        print("error en el codigo fuente.") 
+        return -1;
+    else:        
+        size = 0;
+        with open(target, 'w', encoding="utf8") as archive:
+            for element in instructionTable: #Revisa la tabla para convertir a binario                
+                test = binario(element);     #Agrega los datos en binario                
+                if(test != -1):
                     size += 1;
-                    print(NOP, file=archive);
-                    print(binario(element)[3:], file=archive);
-                elif(test[14:] == "NOP"):
-                    size += 1;
-                    print(binario(element)[:14], file=archive);
-                    print(NOP, file=archive);
+                    print(binario(element), file=archive);                    
                 else:
-                    print(binario(element), file=archive);
-            else:
-                print("Error en el codigo fuente");
-                return -1;
-    print("Compilación en binario con exito, generando mif");
-    mif('program.bin','program.mif',size);
-    print("Finalizado con exito");
-    print(size);
+                    print("Error en el codigo fuente");
+                    return -1;
+        print("Compilación en binario con exito, generando mif");
+        mif('program.bin','program.mif',size);
+        #print("Finalizado con exito");
+        #print(size);
 
 #############################################################
 #Lectura del archivo de origen
