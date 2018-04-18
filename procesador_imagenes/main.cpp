@@ -25,7 +25,7 @@ void show_image (cv::Mat &img) {
   // Muestra la imagen
   cv::imshow(TITLE_W, img );
   // Espera por una señal del teclado para cerrar ventana
-  cv::waitKey(0);
+  cv::waitKey();
 }
 
 /*********************************************************************************/
@@ -50,7 +50,6 @@ int main(int argc, char* argv[] )  {
   /* Se convierte imagen a escala de grises */
   cv::Mat img_g;
   convert2gray(argv[1], img_g );
-  show_image(img_g);
 
   /*******************************************************************/
   /* SE ENCRIPTA IMAGEN */
@@ -60,35 +59,43 @@ int main(int argc, char* argv[] )  {
         /* Encriptacion con XOR */
         printf("----ENCRYPT XOR----\n");
         xor_encrypt(img_g);
+        show_image(img_g);
         /* Desencripta con la misma funcion XOR */
         printf("----DECRYPT XOR----\n");
         xor_encrypt(img_g);
+        show_image(img_g);
         break;
 
      case 2:
        /* Encriptacion con desplazamiento simple */
         printf("----ENCRYPT SIMPLE DISPLACE----\n");
         simple_desp(img_g);
+        show_image(img_g);
        /* Desencripta con desplazamiento simple (se pierde info) */
         printf("----DECRYPT SIMPLE DISPLACE----\n");
         decrypt_simple_desp(img_g);
+        show_image(img_g);
         break;
      case 3:
         /* Encriptacion con desplazamiento circular */
         printf("----ENCRYPT CIRCULAR DISPLACE----\n");
         circular_desp(img_g);
+        show_image(img_g);
         /* Desencripta con desplazamiento circular  */
         printf("----DECRYPT CIRCULAR DISPLACE----\n");
         decrypt_circular_desp(img_g);
+        show_image(img_g);
         break;
 
      case 4:
      /* Encriptacion con suma simple */
         printf("----ENCRYPT SIMPLE ADD----\n");
         simple_add(img_g);
+        show_image(img_g);
         /* desencripta con suma simple */
         printf("----DECRYPT SIMPLE ADD----\n");
         simple_add_decrypt(img_g);
+        show_image(img_g);
         break;
 
       default:

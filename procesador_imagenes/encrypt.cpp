@@ -10,12 +10,12 @@ void xor_encrypt(cv::Mat &mtx ) {
   for(unsigned int j = 0; j < img_h; j++) {
     for(unsigned int i = 0; i < img_w; i++) {
        pix = mtx.at<uint8_t>(j,i);
-       printf( "%d ", pix);
+    //   printf( "%d ", pix);
        xor_val = XOR(pix) ;
        mtx.at<uint8_t>(j, i) = xor_val;
-       printf( "Dato XOR: %d |", mtx.at<uint8_t>(j, i) );
+    //   printf( "Dato XOR: %d |", mtx.at<uint8_t>(j, i) );
     }
-    printf("\n");
+  //  printf("\n");
   }
 }
 
@@ -30,12 +30,12 @@ void simple_desp (cv::Mat &mtx ) {
   for(unsigned int j = 0; j < img_h; j++) {
     for(unsigned int i = 0; i < img_w; i++) {
        pix = mtx.at<uint8_t>(j,i);
-       printf( "%d ",pix);
+  //     printf( "%d ",pix);
        res = MV(pix);
        mtx.at<uint8_t>(j, i) = res;
-       printf( "Dato desplazado: %d | ", mtx.at<uint8_t>(j, i) );
+  //     printf( "Dato desplazado: %d | ", mtx.at<uint8_t>(j, i) );
     }
-    printf("\n");
+  //  printf("\n");
   }
 }
 
@@ -48,12 +48,12 @@ void decrypt_simple_desp (cv::Mat &mtx ) {
   for(unsigned int j = 0; j < img_h; j++) {
     for(unsigned int i = 0; i < img_w; i++) {
        pix = mtx.at<uint8_t>(j,i);
-       printf( "%d ",pix);
+  //     printf( "%d ",pix);
        res = MV_BCK(pix);
        mtx.at<uint8_t>(j, i) = res;
-       printf( "Dato desplazado: %d | ", mtx.at<uint8_t>(j, i) );
+  //     printf( "Dato desplazado: %d | ", mtx.at<uint8_t>(j, i) );
     }
-    printf("\n");
+  //  printf("\n");
   }
 
 }
@@ -69,14 +69,14 @@ void circular_desp (cv::Mat &mtx ) {
   for(unsigned int j = 0; j < img_h; j++) {
     for(unsigned int i = 0; i < img_w; i++) {
        pix = mtx.at<uint8_t>(j,i);
-       printf( "%d ",pix);
+  //     printf( "%d ",pix);
        res_l = MV(pix);
        res_r = pix >> (BIT_AMOUNT - bits_displ);
        or_res = (res_l | res_r);
        mtx.at<uint8_t>(j, i) = or_res;
-       printf( "Dato desplazado circular: %d | ", mtx.at<uint8_t>(j, i));
+  //     printf( "Dato desplazado circular: %d | ", mtx.at<uint8_t>(j, i));
     }
-    printf("\n");
+//    printf("\n");
   }
 }
 
@@ -90,14 +90,14 @@ void decrypt_circular_desp (cv::Mat &mtx) {
   for(unsigned int j = 0; j < img_h; j++) {
     for(unsigned int i = 0; i < img_w; i++) {
        pix = mtx.at<uint8_t>(j,i);
-       printf( "%d ", pix);
+  //     printf( "%d ", pix);
        res_l = pix << (BIT_AMOUNT - bits_displ) ;
        res_r = pix >> bits_displ ;
        or_res = (res_l | res_r);
        mtx.at<uint8_t>(j, i) = or_res;
-       printf( "Dato desplazado circular: %d | ", mtx.at<uint8_t>(j, i));
+  //     printf( "Dato desplazado circular: %d | ", mtx.at<uint8_t>(j, i));
     }
-    printf("\n");
+//    printf("\n");
   }
 }
 
@@ -117,13 +117,13 @@ void simple_add (cv::Mat &mtx) {
          offset = 0;
        }
        pix = (unsigned char)(mtx.at<uint8_t>(j,i));
-       printf( "%d ",pix);
+  //     printf( "%d ",pix);
        res = pix + (pix_arr[offset] );
        mtx.at<uint8_t>(j, i) = res;
-       printf( "Dato sumado: %d |", mtx.at<uint8_t>(j, i) );
+  //     printf( "Dato sumado: %d |", mtx.at<uint8_t>(j, i) );
        offset += 1;
     }
-    printf("\n");
+  //  printf("\n");
   }
 }
 
@@ -141,12 +141,12 @@ void simple_add_decrypt (cv::Mat &mtx) {
          offset = 0;
        }
        pix = (unsigned char)(mtx.at<uint8_t>(j,i));
-       printf( "%d ",pix);
+  //     printf( "%d ",pix);
        res = pix - (pix_arr[offset] );
        mtx.at<uint8_t>(j, i) = res;
-       printf( "Dato sumado: %d |", mtx.at<uint8_t>(j, i) );
+  //     printf( "Dato sumado: %d |", mtx.at<uint8_t>(j, i) );
        offset += 1;
     }
-    printf("\n");
+  //  printf("\n");
   }
 }
