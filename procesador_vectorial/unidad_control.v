@@ -73,6 +73,33 @@ end
 
 always @* //cada cuando tiene que verificar, siempre? o cuando ocurre un cambio en especifico
 begin
+	if (reset == 1)
+		begin
+			//fetch
+			sel_pc<=0;
+
+			//decode
+			sel_dest<=0;
+			reg_rdv<=0;
+			reg_rds<=0;
+
+			//EXE
+			sel_op<=0;
+			sel_ad<=0;
+			sel_int<=0;
+			opcode_out<=opcode_in;
+
+			//Memory
+			sum_mem<=0;
+			sel_mem<=0;
+			sel_data<=0;
+			mem_wr<=0;
+			//Write back:
+			sel_wb<=0;
+			reg_wrv<=0;
+			reg_wrs<=0;
+		end
+		
     case (opcode_in)
 		4'b0000:
 			begin
@@ -525,7 +552,7 @@ begin
 			reg_wrv<=0;
 			reg_wrs<=0;
 		end
-
+			
     endcase
 end
 endmodule
