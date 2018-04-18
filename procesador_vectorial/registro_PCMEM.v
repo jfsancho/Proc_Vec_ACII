@@ -1,6 +1,7 @@
 module registro_PCMEM (clk, pc_in, pc_out);
 
 input wire clk;
+input wire reset;
 input wire [31:0] pc_in;
 reg [31:0]pc;
 output reg [31:0] pc_out;

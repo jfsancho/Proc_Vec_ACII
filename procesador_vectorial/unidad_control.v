@@ -1,5 +1,6 @@
 module unidad_control(
 	opcode_in,
+	reset,
 
 	//fetch
 	sel_pc,
@@ -25,6 +26,7 @@ module unidad_control(
 );
 
 input wire [3:0] opcode_in;
+input wire reset;
 
 output reg sel_pc;
 output reg reg_rdv;
